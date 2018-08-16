@@ -24,7 +24,7 @@
                             <li><a href="#acercade">Acerca de</a></li>
                             <li class="borde-derecho-blanco"><a href="#FAQ">FAQ's</a></li>
                             <li class="enlace-azul">
-                              <a href="login.html" >Iniciar sesión</a>
+                              <a href="login.php" >Iniciar sesión</a>
                             </li>
                         </ul>
                     </nav>
@@ -32,7 +32,7 @@
 
                 <div class="texto-inicio">
                     <h2>Te recomendamos <strong>las mejores películas</strong> en base a tus gustos...</h2>
-                    <a href="login.html"><div class="boton-comenzar">Comenzar ahora</div></a>
+                    <a href="login.php"><div class="boton-comenzar">Comenzar ahora</div></a>
                 </div>
               </div>
             </section>
@@ -113,8 +113,8 @@
                         <li><a href="#home">Inicio</a></li>
                         <li><a href="#acercade" class="efecto">Acerca de</a></li>
                         <li class="borde-derecho-gris"><a href="#FAQ">Preguntas frecuentes</a></li>
-                        <li><a href="login.html" class="enlace-azul">Iniciar sesión</a></li>
-                        <li><a href="registro.html" class="enlace-azul">Registrate</a></li>
+                        <li><a href="login.php" class="enlace-azul">Iniciar sesión</a></li>
+                        <li><a href="registro.php" class="enlace-azul">Registrate</a></li>
                     </ul>
                 </nav>
                 <div class="copyright">©2018 MrMovy. Todos los derechos reservados</div>

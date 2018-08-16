@@ -1,38 +1,11 @@
-<!DOCTYPE html>
-<html lang="es" dir="ltr">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400" rel="stylesheet">
-        <link rel="stylesheet" href="css/styles.css">
-        <title>Iniciar sesión - Mr Movy</title>
-        <link rel="icon" type="image/png" href="images/favicon.png" />
-    </head>
-    <body>
-        <div class="container">
-            <header class="fondo-negro">
-              <div class="contenedor">
-                <a href="#"><img src="images/logo.png" alt="" class="logo"></a>
-                <div class="menu-movil">
-                  <img src="images/menu-movil.png" alt="">
-                </div>
-                <nav class="menu-principal">
-                    <ul>
-                        <li><a href="index.html">Inicio</a></li>
-                        <li><a href="index.html#acercade">Acerca de</a></li>
-                        <li class="borde-derecho-blanco"><a href="index.html#FAQ">FAQ's</a></li>
-                        <li><a href="login.html">Iniciar sesión</a></li>
-                    </ul>
-                </nav>
-              </div>
-            </header>
+<?php require_once('header.php') ?>
 
             <section class="login">
               <div class="contenedor">
                 <div class="texto-formulario">
                     <h2><span>Hola</span>, logueate para continuar</h2>
                     <p>Bienvenido, ingresa para ver tus películas.</p>
-                    <a href="#">Olvidé la contraseña</a> / <a href="registro.html">Registrarse</a>
+                    <a href="#">Olvidé la contraseña</a> / <a href="registro.php">Registrarse</a>
                 </div>
 
                 <div class="formulario">
@@ -56,11 +29,11 @@
                 <img class="" src="images/favicon.png" alt="" class="claqueta">
                 <nav class="menu-footer">
                     <ul>
-                      <li><a href="index.html">Inicio</a></li>
-                      <li><a href="index.html#acercade">Acerca de</a></li>
-                      <li class="borde-derecho-gris"><a href="index.html#FAQ">Preguntas frecuentes</a></li>
-                      <li><a href="login.html" class="enlace-azul">Iniciar sesión</a></li>
-                      <li><a href="registro.html" class="enlace-azul">Registrate</a></li>
+                      <li><a href="index.php">Inicio</a></li>
+                      <li><a href="index.php#acercade">Acerca de</a></li>
+                      <li class="borde-derecho-gris"><a href="index.php#FAQ">Preguntas frecuentes</a></li>
+                      <li><a href="login.php" class="enlace-azul">Iniciar sesión</a></li>
+                      <li><a href="registro.php" class="enlace-azul">Registrate</a></li>
                     </ul>
                 </nav>
                 <div class="copyright">©2018 MrMovy. Todos los derechos reservados</div>
