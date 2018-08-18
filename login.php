@@ -1,4 +1,19 @@
 <?php require_once('header.php') ?>
+<?php require_once('funciones.php') ?>
+
+<?php
+
+  $email = '';
+  $errores = [];
+
+  if ($_POST) {
+    $email = trim($_POST['email']);
+    $errores = validarLogin($_POST);
+  }
+
+
+
+ ?>
 
             <section class="login">
               <div class="contenedor">
@@ -9,10 +24,14 @@
                 </div>
 
                 <div class="formulario">
-                    <form>
-                            <input type="email" class="" id="email" placeholder="Direccion de correo electrónico" name="email" required>
+                    <form method="post">
+                            <input type="text" class="" id="email" placeholder="Direccion de correo electrónico" name="email" value="<?= $email ?>">
+
+                            <?= isset($errores['email']) ? $errores['email'] : '' ?>
 
                             <input type="password" class="" id="pass" placeholder="Tu contraseña" name="pass" required>
+
+                            <?= isset($errores['pass']) ? $errores['pass'] : '' ?>
 
                             <label class="label-checkbox" for="recordar">Recordarme</label>
                             <input class="checkbox-recordar" type="checkbox" name="" value="" id="recordar">

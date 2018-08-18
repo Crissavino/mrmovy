@@ -37,10 +37,6 @@
 
                             <?= isset($errores['pass']) ? $errores['pass'] : '' ?>
 
-                            <input type="file" name="avatar" value="" >
-
-                            <?= isset($errores['avatar']) ? $errores['avatar'] : '' ?>
-
                             <br>
                             <button type="submit" name="button" class="boton" >Comenzar ahora</button>
 
