@@ -1,3 +1,7 @@
+<?php require_once('funciones.php') ?>
+
+
+
 <!DOCTYPE html>
 <html lang="es" dir="ltr">
     <head>

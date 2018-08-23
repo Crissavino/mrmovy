@@ -2,13 +2,34 @@
 <?php require_once('funciones.php') ?>
 
 <?php
-
+  //incializo $email vacio para persistirla
   $email = '';
+  //incializo el arreglo errores vacio
   $errores = [];
-
+  //si llega algo por $_POST, es decir, si escribe algo en el login
   if ($_POST) {
+      //trimeo el email para quitar los espacios
     $email = trim($_POST['email']);
+    //asigno a $errores el valor que devuelve la funcion validarLogin (recordar que vuelve, si hay, el array $errores con los errores que haya)
     $errores = validarLogin($_POST);
+
+    if (empty($errores)) {
+
+        $usuario = traerPorEmail($email);
+
+        loguearUsuario($usuario);
+
+        //seteo la cookio
+        if (isset($_POST['recordar'])) {
+            //si esta tildado el checkbok de recordarme
+            $expira = time() + 3600*24*365;
+            //expire en un año
+            setcookie('id', $usuario['id'], $expira);
+        }
+
+        header('location: perfil.php');
+        exit;
+    }
   }
 
 
@@ -26,15 +47,18 @@
                 <div class="formulario">
                     <form method="post">
                             <input type="text" class="" id="email" placeholder="Direccion de correo electrónico" name="email" value="<?= $email ?>">
+                            <!-- para persistir el email, al valor del formulario le asigno la variable $email, que la inicio vacia para que no muestre ningun error, una vez que el usuario complete en un email es el dato a evaluar que llega por $_POST -->
 
+                            <!-- si existe algun error, hace un echo de los errores -->
                             <?= isset($errores['email']) ? $errores['email'] : '' ?>
 
                             <input type="password" class="" id="pass" placeholder="Tu contraseña" name="pass" required>
 
+                            <!-- si existe algun error, hace un echo de los errores -->
                             <?= isset($errores['pass']) ? $errores['pass'] : '' ?>
 
                             <label class="label-checkbox" for="recordar">Recordarme</label>
-                            <input class="checkbox-recordar" type="checkbox" name="" value="" id="recordar">
+                            <input class="checkbox-recordar" type="checkbox" name="recordar" value="" id="recordar">
 
                             <button type="submit" name="button" class="boton" >Iniciar sesión</button>
 

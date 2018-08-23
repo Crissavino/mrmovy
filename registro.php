@@ -2,16 +2,26 @@
 <?php require_once('funciones.php') ?>
 
 <?php
-
+    //incializo $email vacio para persistirla
   $email = "";
+  //incializo el arreglo errores vacio
   $errores = [];
 
+  //si llega algo por $_POST, es decir, si escribe algo en el login
   if ($_POST) {
+      //trimeo el email para quitar los espacios
     $email = trim($_POST['email']);
+    //compruebo que se hayan llenado correctamente todos los campos y que el usuario no este registrado
     $errores = validar($_POST);
-
+    //si no existe ningun error, es decir, si el array $errores esta vacio (empty)
     if (empty($errores)) {
       guardarUsuario($_POST);
+      //guardo el usuario que recibo por $_POST
+
+      //logueo al usuario que recibo por $_POST
+      loguearUsuario($_POST);
+
+      header('location: paso1.php'); exit;
     }
   }
 
@@ -28,13 +38,16 @@
                 <div class="formulario">
                     <form enctype="multipart/form-data" method="post">
                             <input type="text" class="" id="email" placeholder="Direccion de correo electrónico" name="email" value="<?= $email ?>" >
+                            <!-- para persistir el email, al valor del formulario le asigno la variable $email, que la inicio vacia para que no muestre ningun error, una vez que el usuario complete en un email es el dato a evaluar que llega por $_POST -->
 
+                            <!-- si existe algun error, hace un echo de los errores -->
                             <?= isset($errores['email']) ? $errores['email'] : '' ?>
 
                             <input type="password" class="" id="pass" placeholder="Escribe una contraseña" name="pass" >
 
                             <input type="password" class="" id="rpass"  placeholder="Repetí la contraseña" name="rpass" >
 
+                            <!-- si existe algun error, hace un echo de los errores -->
                             <?= isset($errores['pass']) ? $errores['pass'] : '' ?>
 
                             <br>
