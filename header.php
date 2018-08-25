@@ -12,7 +12,7 @@
         <div class="container">
             <header class="fondo-negro">
               <div class="contenedor">
-                <a href="#"><img src="images/logo.png" alt="" class="logo"></a>
+                <a href="https://mrmovy.com"><img src="images/logo.png" alt="" class="logo"></a>
                 <div class="menu-movil">
                   <img src="images/menu-movil.png" alt="">
                 </div>

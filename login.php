@@ -2,6 +2,12 @@
 <?php require_once('funciones.php') ?>
 
 <?php
+
+  // Si está logueado, lo redirigo directamente a los resultados, no lo dejo loguerase de nuevo
+  if (estaLogueado()) {
+    header('location: resultados.php');
+    exit;
+  }
   //incializo $email vacio para persistirla
   $email = '';
   //incializo el arreglo errores vacio
@@ -17,9 +23,7 @@
 
         $usuario = traerPorEmail($email);
 
-        loguearUsuario($usuario);
-
-        //seteo la cookio
+        // Primero me fijo si está checkeado el recordar y si es así guardo la cookie
         if (isset($_POST['recordar'])) {
             //si esta tildado el checkbok de recordarme
             $expira = time() + 3600*24*365;
@@ -27,7 +31,8 @@
             setcookie('id', $usuario['id'], $expira);
         }
 
-        header('location: perfil.php');
+        // Logueo al usuario y como ya tiene la redireccion no es necesaria
+        loguearUsuario($usuario);
         exit;
     }
   }

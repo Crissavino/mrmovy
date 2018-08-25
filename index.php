@@ -2,6 +2,7 @@
 
 
 
+
 <!DOCTYPE html>
 <html lang="es" dir="ltr">
     <head>
@@ -18,7 +19,7 @@
             <section class="inicio" id="home">
               <div class="contenedor">
                 <header>
-                    <a href="#"><img src="images/logo.png" alt="" class="logo"></a>
+                    <a href="https://mrmovy.com"><img src="images/logo.png" alt="" class="logo"></a>
                     <div class="menu-movil">
                       <img src="images/menu-movil.png" alt="">
                     </div>

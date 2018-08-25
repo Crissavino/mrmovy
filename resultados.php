@@ -1,6 +1,16 @@
 <?php require_once('funciones.php') ?>
 <?php require_once('header.php') ?>
 
+<?php
+
+  if (!estaLogueado()) {
+    header('location: login.php');
+    exit;
+  }
+
+
+ ?>
+
 
             <section class="contenedor">
 
@@ -13,45 +23,63 @@
                 <article class="tarjeta">
                     <img src="" class="tarjeta-pelicula" alt="">
                     <div class="">
-                        <h2><?php //titulo de la pelicula ?></h2>
-                        <p class="fecha"><?php //año de la pelicula ?></p>
-                        <span><?php //generos, tematicas ?></span>
-                        <p><?php //actores ?></p>
-                        <p>Dirigida por <?php //director ?></p>
-                        <span>Más información</span>
-                        <button type="button" name="button"> <img src="" class="netflix" alt=""> </button>
-                        <button type="button" name="button"> <img src="" class="play" alt=""> Trailer</button>
-                        <button type="button" class="boton" name="button"> <img src="" class="cambiar" alt=""> La ví</button>
+                        <h2>The Shawshank Redemption</h2>
+                        <p class="fecha">2011</p>
+                        <span>Acción, Drama</span>
+                        <p>Actor 1, Actor2</p>
+                        <p>Dirigida por Director</p>
+                        <div class="info"><a href="info.php">Más información</a></div>
+                        <div class="netflix">
+
+                        </div>
+                        <div class="trailer">
+                          Ver trailer
+                        </div>
+                        <div class="lavi boton">
+                          La ví
+                        </div>
                     </div>
                 </article>
 
                 <article class="tarjeta">
                     <img src="" class="tarjeta-pelicula" alt="">
                     <div class="">
-                        <h2><?php //titulo de la pelicula ?></h2>
-                        <p class="fecha"><?php //año de la pelicula ?></p>
-                        <span><?php //generos, tematicas ?></span>
-                        <p><?php //actores ?></p>
-                        <p>Dirigida por <?php //director ?></p>
-                        <span>Más información</span>
-                        <button type="button" name="button"> <img src="" class="netflix" alt=""> </button>
-                        <button type="button" name="button"> <img src="" class="play" alt=""> Trailer</button>
-                        <button type="button" class="boton" name="button"> <img src="" class="cambiar" alt=""> La ví</button>
+                        <h2>The Shawshank Redemption</h2>
+                        <p class="fecha">2011</p>
+                        <span>Acción, Drama</span>
+                        <p>Actor 1, Actor2</p>
+                        <p>Dirigida por Director</p>
+                        <div class="info"><a href="info.php">Más información</a></div>
+                        <div class="netflix">
+
+                        </div>
+                        <div class="trailer">
+                          Ver trailer
+                        </div>
+                        <div class="lavi boton">
+                          La ví
+                        </div>
                     </div>
                 </article>
 
                 <article class="tarjeta">
                     <img src="" class="tarjeta-pelicula" alt="">
                     <div class="">
-                        <h2><?php //titulo de la pelicula ?></h2>
-                        <p class="fecha"><?php //año de la pelicula ?></p>
-                        <span><?php //generos, tematicas ?></span>
-                        <p><?php //actores ?></p>
-                        <p>Dirigida por <?php //director ?></p>
-                        <span>Más información</span>
-                        <button type="button" name="button"> <img src="" class="netflix" alt=""> </button>
-                        <button type="button" name="button"> <img src="" class="play" alt=""> Trailer</button>
-                        <button type="button" class="boton" name="button"> <img src="" class="cambiar" alt=""> La ví</button>
+                        <h2>The Shawshank Redemption</h2>
+                        <p class="fecha">2011</p>
+                        <span>Acción, Drama</span>
+                        <p>Actor 1, Actor2</p>
+                        <p>Dirigida por Director</p>
+                        <div class="info"><a href="info.php">Más información</a></div>
+                        <div class="netflix">
+
+                        </div>
+                        <div class="trailer">
+                          Ver trailer
+                        </div>
+                        <div class="lavi boton">
+                          La ví
+                        </div>
                     </div>
                 </article>
 

@@ -1,6 +1,16 @@
 <?php require_once('funciones.php') ?>
 <?php require_once('header.php') ?>
 
+<?php
+
+  // Si no está logueado, mando al usuario al login
+  if (!estaLogueado()) {
+    header('location: login.php');
+    exit;
+  }
+
+ ?>
+
             <section class="contenedor">
 
                 <h2><span>Paso 2 de 3:</span> Elije tematicas de preferencia</h2>

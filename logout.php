@@ -1,8 +1,8 @@
 <?php
-    session_start();
+  session_start();
 	setcookie('id', '', time() -10);
 	session_destroy();
-	header('location: registro.php');
+	header('location: login.php');
 	exit;
 
  ?>

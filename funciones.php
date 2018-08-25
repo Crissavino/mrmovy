@@ -65,7 +65,6 @@ function guardarUsuario($dato) {
   //codifico al usuario en json
   $usuarioJSON = json_encode($usuario);
 
-  //lo meto en el archivo usuarios.json separado por una contante(fin de linea), escribe una linea debajo del ultimo input
   file_put_contents('usuarios.json', $usuarioJSON . PHP_EOL, FILE_APPEND);
 
 
@@ -177,15 +176,11 @@ function asignarID() {
 
 function loguearUsuario($usuario){
     $_SESSION['id'] = $usuario['id'];
-    header('location: perfil.php');
+    // Acá vamos a tener que hacer un if y preguntar si el usuario ya completo la encuesta
+    header('location: paso1.php');
     exit;
 }
 
 function estaLogueado(){
     return isset($_SESSION['id']);
-}
-
-if (estaLogueado()) {
-    header('location: perfil.php');
-    exit;
 }

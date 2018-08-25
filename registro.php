@@ -2,6 +2,12 @@
 <?php require_once('funciones.php') ?>
 
 <?php
+
+  // Si está logueado, lo redirigo directamente a los resultados, no lo dejo registrarse de nuevo
+  if (estaLogueado()) {
+    header('location: resultados.php');
+    exit;
+  }
     //incializo $email vacio para persistirla
   $email = "";
   //incializo el arreglo errores vacio
@@ -9,19 +15,17 @@
 
   //si llega algo por $_POST, es decir, si escribe algo en el login
   if ($_POST) {
-      //trimeo el email para quitar los espacios
+    //trimeo el email para quitar los espacios
     $email = trim($_POST['email']);
     //compruebo que se hayan llenado correctamente todos los campos y que el usuario no este registrado
     $errores = validar($_POST);
     //si no existe ningun error, es decir, si el array $errores esta vacio (empty)
     if (empty($errores)) {
-      guardarUsuario($_POST);
       //guardo el usuario que recibo por $_POST
-
+      guardarUsuario($_POST);
       //logueo al usuario que recibo por $_POST
       loguearUsuario($_POST);
-
-      header('location: paso1.php'); exit;
+      exit;
     }
   }
 
