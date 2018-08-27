@@ -1,0 +1,207 @@
+/* Acomodo para tablet */
+
+@media (max-width: 980px) {
+
+/* Home */
+.contenedor{
+  width: 90%;
+}
+/* Pasos */
+/* Esta es una opcion para que quede el texto igual que en la version Desktop achicando la letra del h2 y tambien poniendo en porcentaje los tops y lefts de las flechas*/
+.pasos .imagen-paso {
+  padding: 30px 33px;
+  margin-right: 10px;
+}
+
+.pasos h2 {
+  font-size: 16px;
+  padding-top: 30px;
+}
+
+.pasos .tarjeta-paso .flecha-paso-1 {
+  margin-top: 40px;
+  top: 70%;
+  left: 45%;
+}
+
+.pasos .tarjeta-paso .flecha-paso-2 {
+  margin-top: -148px;
+  top: 80%;
+  left: 45%;
+}
+
+/* FORMULARIO REGISTRO Y LOGIN  */
+
+.texto-formulario {
+  width: 100%;
+  padding-top: 0px;
+  margin-top: -30px;
+}
+
+.formulario {
+  width: 100%;
+  padding: 25px;
+  clear: both;
+  margin: 40px 0px 0px 0px;
+}
+
+
+}
+
+@media (max-width:720px) {
+
+/* HEADER */
+/* Oculto el menu para Desktop y muestro el menu tipo hamburguesa y lo acomodo con position relative */
+header{
+    position: relative;
+  }
+
+header .menu-movil {
+    display: inherit;
+    position: absolute;
+    right: 20px;
+}
+header .menu-principal {
+    display: none;
+}
+
+.fondo-negro {
+  padding: 20px 0px 20px 0px;
+}
+
+/* PASOS  */
+
+.pasos {
+  /* Acomode los padding, fijate que te parece Juan */
+  padding: 75px 0px 150px 0px;
+  overflow: hidden;
+}
+.pasos .tarjeta-paso {
+  width: 100%;
+  float: none;
+  margin: 30px 0px;
+  padding: 50px 0px 50px 0px;
+  position: relative;
+}
+
+.pasos .tarjeta-paso:first-child{
+  padding-top: 0px;
+}
+
+.pasos .tarjeta-paso:last-child{
+  padding-top: 20px;
+  padding-bottom: 0px;
+}
+
+.pasos .imagen-paso {
+  float: left;
+  margin-left: 50px;
+  margin-right: 25px;
+}
+
+.pasos h2 {
+  font-size: 24px;
+  padding-top: 12px;
+}
+
+.pasos .tarjeta-paso .flecha-paso-1 {
+  display: none;
+
+}
+
+.pasos .tarjeta-paso .flecha-paso-2 {
+  display: none;
+}
+/* Ver donde ubicar la tilde, yo segui como las flechas, por la izquierda */
+.pasos .tarjeta-paso .tick-paso-3 {
+  float: left;
+  position: absolute;
+  top: 140%;
+  left: 5%;
+}
+
+.pasos .tarjeta-paso .flecha-movil {
+  display: inherit;
+  position: absolute;
+  top: 70%;
+}
+
+/* ESTADISTICAS */
+
+.estadisticas .tarjeta-estadistica {
+  width: 45%;
+  float: left;
+  /* padding-right: 20px; */
+  margin-bottom: 2.5%;
+}
+
+/* PREGUNTAS FRECUENTES  */
+
+.faqs .tarjeta-faq {
+  width: 100%;
+  float: none;
+  margin-bottom: 5%;
+}
+
+.borde-derecho-gris {
+  border: none;
+}
+
+.menu-footer ul li {
+  clear: both;
+  text-align: center;
+  width: 100%;
+}
+
+}
+
+
+@media (max-width: 533px) {
+/* PASOS */
+
+.pasos .tarjeta-paso .tick-paso-3 {
+  position: absolute;
+  top: 100%;
+  left: 5%;
+}
+}
+
+@media (max-width: 480px) {
+
+  /* Texto inicio */
+  .inicio .texto-inicio {
+      padding: 40px 0px;
+  }
+  /* Tuve que achicar la letra porque quedaba mal */
+  .inicio .texto-inicio h2 {
+    width: 100%;
+    padding-bottom: 0px;
+    font-size: 42px;
+  }
+
+  .inicio .boton-comenzar {
+    margin-top: 50px;
+  }
+
+
+  /* ESTADISTICAS  */
+  /* Tambien se puede poner el texto a la derecha, no me gusto muchon, pero es una opcion */
+
+  .estadisticas .tarjeta-estadistica {
+  width: 100%;
+  float: none;
+  margin-bottom: 2.5%;
+  }
+
+}
+
+@media (max-width: 390px) {
+/* PASOS */
+
+.pasos .tarjeta-paso .tick-paso-3 {
+  position: absolute;
+  top: 80%;
+  left: 5%;
+}
+  /* Ver como acomodamos el footer de la mejor manera para mobile, achico la letra? */
+}

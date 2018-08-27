@@ -14,26 +14,28 @@
 
             <section class="contenedor">
 
-                <div class="">
-                    <p>Selecciona <span>tus peliculas favoritas</span> para aumentar tu nivel de coincidencia</p>
+                <div class="notificacion">
+                    <p>Selecciona tus <a href="#">películas favoritas</a> para aumentar tu nivel de coincidencia</p>
                 </div>
 
-                <h2><p><span>¡Felicitaciones!</span> Estas son nuestras recomendaciones según tus gustos, prometemos no desfraudarte :)</p></h2>
+                <h2 class="titulo-resultados"><span>¡Felicitaciones!</span> Estas son nuestras recomendaciones según tus gustos, prometemos no desfraudarte :)</h2>
 
-                <article class="tarjeta">
-                    <img src="" class="tarjeta-pelicula" alt="">
-                    <div class="">
+                <article class="tarjeta-resultados">
+                    <img src="images/peli.jpg" class="tarjeta-pelicula" alt="">
+                    <div class="pelicula">
                         <h2>The Shawshank Redemption</h2>
                         <p class="fecha">2011</p>
-                        <span>Acción, Drama</span>
-                        <p>Actor 1, Actor2</p>
-                        <p>Dirigida por Director</p>
-                        <div class="info"><a href="info.php">Más información</a></div>
-                        <div class="netflix">
-
+                        <p class="generos">Acción, Drama</p>
+                        <p class="actores">Actor 1, Actor2</p>
+                        <p class="director">Dirigida por <strong>Director</strong></p>
+                        <a href="info.php"><div class="boton-gris">
+                          Más info
+                        </div></a>
+                        <div class="boton-gris boton-netflix">
+                          <img src="images/logo-netflix.png" alt="">
                         </div>
-                        <div class="trailer">
-                          Ver trailer
+                        <div class="boton-gris trailer">
+                          <img src="images/ver-trailer.png" alt="">Trailer
                         </div>
                         <div class="lavi boton">
                           La ví
@@ -41,20 +43,22 @@
                     </div>
                 </article>
 
-                <article class="tarjeta">
-                    <img src="" class="tarjeta-pelicula" alt="">
-                    <div class="">
+                <article class="tarjeta-resultados">
+                    <img src="images/peli.jpg" class="tarjeta-pelicula" alt="">
+                    <div class="pelicula">
                         <h2>The Shawshank Redemption</h2>
                         <p class="fecha">2011</p>
-                        <span>Acción, Drama</span>
-                        <p>Actor 1, Actor2</p>
-                        <p>Dirigida por Director</p>
-                        <div class="info"><a href="info.php">Más información</a></div>
-                        <div class="netflix">
-
+                        <p class="generos">Acción, Drama</p>
+                        <p class="actores">Actor 1, Actor2</p>
+                        <p class="director">Dirigida por <strong>Director</strong></p>
+                        <a href="info.php"><div class="boton-gris">
+                          Más info
+                        </div></a>
+                        <div class="boton-gris boton-netflix">
+                          <img src="images/logo-netflix.png" alt="">
                         </div>
-                        <div class="trailer">
-                          Ver trailer
+                        <div class="boton-gris trailer">
+                          <img src="images/ver-trailer.png" alt="">Trailer
                         </div>
                         <div class="lavi boton">
                           La ví
@@ -62,20 +66,22 @@
                     </div>
                 </article>
 
-                <article class="tarjeta">
-                    <img src="" class="tarjeta-pelicula" alt="">
-                    <div class="">
+                <article class="tarjeta-resultados">
+                    <img src="images/peli.jpg" class="tarjeta-pelicula" alt="">
+                    <div class="pelicula">
                         <h2>The Shawshank Redemption</h2>
                         <p class="fecha">2011</p>
-                        <span>Acción, Drama</span>
-                        <p>Actor 1, Actor2</p>
-                        <p>Dirigida por Director</p>
-                        <div class="info"><a href="info.php">Más información</a></div>
-                        <div class="netflix">
-
+                        <p class="generos">Acción, Drama</p>
+                        <p class="actores">Actor 1, Actor2</p>
+                        <p class="director">Dirigida por <strong>Director</strong></p>
+                        <a href="info.php"><div class="boton-gris">
+                          Más info
+                        </div></a>
+                        <div class="boton-gris boton-netflix">
+                          <img src="images/logo-netflix.png" alt="">
                         </div>
-                        <div class="trailer">
-                          Ver trailer
+                        <div class="boton-gris trailer">
+                          <img src="images/ver-trailer.png" alt="">Trailer
                         </div>
                         <div class="lavi boton">
                           La ví
