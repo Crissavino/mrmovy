@@ -16,7 +16,7 @@
   if ($_POST) {
       //trimeo el email para quitar los espacios
     $email = trim($_POST['email']);
-    //asigno a $errores el valor que devuelve la funcion validarLogin (recordar que vuelve, si hay, el array $errores con los errores que haya)
+    //asigno a $errores el valor que devuelve la funcion validarLogin (recordar que devuelve, si hay, el array $errores con los errores que tenga)
     $errores = validarLogin($_POST);
 
     if (empty($errores)) {

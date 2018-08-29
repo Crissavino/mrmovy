@@ -67,7 +67,6 @@ function guardarUsuario($dato) {
 
   file_put_contents('usuarios.json', $usuarioJSON . PHP_EOL, FILE_APPEND);
 
-
 }
 
 function validarLogin($dato) {
@@ -92,21 +91,6 @@ function validarLogin($dato) {
   return $errores;
 }
 
-// function guardarFoto($dato) {
-//   $ext = strtolower(pathinfo($_FILES[$dato]['name'], PATHINFO_EXTENSION));
-//   $errores = [];
-//   if ($ext == 'jpg' || $ext == 'jpeg' || $ext == 'png' ) {
-//     $desde = $_FILES[$dato]['tmp_name'];
-//     $hasta = dirname(__FILE__) . '/images' . '/avatares/' . $_POST['email'] .'.'. $ext;
-//     move_uploaded_file($desde, $hasta);
-//
-//     return $errores;
-//   }
-//
-//   $errores['avatar'] = 'Solo se puede subir imágenes en formato png o jpg';
-//   return $errores;
-//
-// }
 
 function traerPorEmail($email) {
     //me traigo el email asociado a cada usuario
@@ -183,4 +167,117 @@ function loguearUsuario($usuario){
 
 function estaLogueado(){
     return isset($_SESSION['id']);
+}
+
+
+//FUNCIONES PARA CARGAR PELICULAS
+
+function validarCarga($dato, $portada){
+
+    $titulo = $dato['titulo'];
+    $genero = $dato['genero'];
+    $anio = $dato['anio'];
+    $duracion = $dato['duracion'];
+    $resumen = $dato['resumen'];
+    $actores = $dato['actores'];
+    $produccion = $dato['produccion'];
+    $netflix = $dato['netflix'];
+    $trailer = $dato['trailer'];
+
+    $erroresCarga = [];
+
+    //guardo los errores para mostrarlos
+
+    if ($_FILES[$portada]['error'] != UPLOAD_ERR_OK) { // si no se subio ninguna portada
+		$erroresCarga['portada'] = "Por favor subí una portada";
+	   } else {
+		$ext = strtolower(pathinfo($_FILES[$portada]['name'], PATHINFO_EXTENSION));
+		if ($ext != 'jpg' && $ext != 'png' && $ext != 'jpeg') {
+			$erroresCarga['portada'] = "Formatos admitidos: JPG o PNG";
+		}
+	}
+
+    if ($dato['titulo'] == '') {
+        $erroresCarga['titulo'] = 'Ingresá un título';
+    }
+
+    if ($dato['genero'] == '') {
+        $erroresCarga['genero'] = 'Ingresá un género';
+    }
+
+    if ($dato['anio'] == '') {
+        $erroresCarga['anio'] = 'Ingresá un año';
+    }
+
+    if ($dato['duracion'] == '') {
+        $erroresCarga['duracion'] = 'Ingresá un duración';
+    }
+
+    if ($dato['resumen'] == '') {
+        $erroresCarga['resumen'] = 'Ingresá un resúmen';
+    }
+
+    if ($dato['actores'] == '') {
+        $erroresCarga['actores'] = 'Ingresá un actores';
+    }
+
+    if ($dato['produccion'] == '') {
+        $erroresCarga['produccion'] = 'Ingresá un producción';
+    }
+
+    if ($dato['netflix'] == '') {
+        $erroresCarga['netflix'] = 'Ingresá un Netflix';
+    }
+
+    if ($dato['trailer'] == '') {
+        $erroresCarga['trailer'] = 'Ingresá un trailer';
+    }
+
+    //devuelvo el arreglo de errores, para mostrar si guardo algun error
+    return $erroresCarga;
+}
+
+function guardarPortada($dato) {
+  $ext = strtolower(pathinfo($_FILES[$dato]['name'], PATHINFO_EXTENSION));
+  $erroresCarga = [];
+  if ($ext == 'jpg' || $ext == 'jpeg' || $ext == 'png' ) {
+    $desde = $_FILES[$dato]['tmp_name'];
+    $hasta = dirname(__FILE__) . '/images' . '/portadas/' . $_POST['portada'] .'.'. $ext;
+    move_uploaded_file($desde, $hasta);
+
+    return $erroresCarga;
+  }
+
+  $erroresCarga['portada'] = 'Solo se puede subir imágenes en formato png o jpg';
+
+  return $erroresCarga;
+
+}
+
+function guardarPelicula($dato, $portada){
+    $pelicula = [];
+
+    $pelicula['portada'] = dirname(__FILE__) . '/images' . '/portadas/' . $dato['titulo'] .'.'. $ext;
+
+    $pelicula['titulo'] = $dato['titulo'];
+
+    $pelicula['genero'] = $dato['genero'];
+
+    $pelicula['anio'] = $dato['anio'];
+
+    $pelicula['duracion'] = $dato['duracion'];
+
+    $pelicula['resumen'] = $dato['resumen'];
+
+    $pelicula['actores'] = $dato['actores'];
+
+    $pelicula['produccion'] = $dato['produccion'];
+
+    $pelicula['netflix'] = $dato['netflix'];
+
+    $pelicula['trailer'] = $dato['trailer'];
+
+    $peliculasJSON = json_encode($pelicula);
+
+    file_put_contents('peliculas.json', $peliculasJSON . PHP_EOL, FILE_APPEND);
 }
