@@ -8,6 +8,11 @@
     exit;
   }
 
+  // if (no completo la encuesta) {
+  //   header('location: paso1.php');
+  //   exit;
+  // }
+
 
  ?>
 
@@ -18,7 +23,7 @@
                     <p>Selecciona tus <a href="#">películas favoritas</a> para aumentar tu nivel de coincidencia</p>
                 </div>
 
-                <h2 class="titulo-resultados"><span>¡Felicitaciones!</span> Estas son nuestras recomendaciones según tus gustos, prometemos no desfraudarte :)</h2>
+                <h2 class="titulo-resultados"><span>¡Felicitaciones!</span> Estas son nuestras recomendaciones según tus gustos, prometemos no defraudarte :)</h2>
 
                 <article class="tarjeta-resultados">
                     <img src="images/peli.jpg" class="tarjeta-pelicula" alt="">
