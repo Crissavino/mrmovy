@@ -242,7 +242,7 @@ function guardarPortada($dato) {
   $erroresCarga = [];
   if ($ext == 'jpg' || $ext == 'jpeg' || $ext == 'png' ) {
     $desde = $_FILES[$dato]['tmp_name'];
-    $hasta = dirname(__FILE__) . '/images' . '/portadas/' . $_POST['titulo'] .'.'.$ext;
+    $hasta = dirname(__FILE__) . '/images' . '/portadas/' . $_POST['portada'] .'.'. $ext;
     move_uploaded_file($desde, $hasta);
 
     return $erroresCarga;
@@ -256,7 +256,6 @@ function guardarPortada($dato) {
 
 function guardarPelicula($dato, $portada){
     $pelicula = [];
-    $ext = strtolower(pathinfo($_FILES['portada']['name'], PATHINFO_EXTENSION));
 
     $pelicula['portada'] = dirname(__FILE__) . '/images' . '/portadas/' . $dato['titulo'] .'.'. $ext;
 
