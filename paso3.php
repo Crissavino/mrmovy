@@ -1,4 +1,3 @@
-<?php require_once('funciones.php') ?>
 <?php require_once('header.php') ?>
 
 <?php

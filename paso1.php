@@ -1,4 +1,3 @@
-<?php require_once('funciones.php') ?>
 <?php require_once('header.php') ?>
 
 <?php
@@ -9,7 +8,7 @@
     exit;
   }
 
-  if (completoEncuesta($_SESSION['id']) == true) {
+  if (completoEncuesta($_SESSION['id'])) {
     header('location: resultados.php');
     exit;
   }

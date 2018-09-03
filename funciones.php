@@ -298,7 +298,7 @@ function guardarPelicula($dato, $portada){
     file_put_contents('peliculas.json', $peliculasJSON . PHP_EOL, FILE_APPEND);
 }
 
-// FUNCIONES DE encuesta
+// FUNCIONES DE ENCUESTA
 
 function cambiarEncuesta($usuarioACambiar){
 
