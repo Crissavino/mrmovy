@@ -8,6 +8,11 @@
     exit;
   }
 
+  // if (no completo la encuesta) {
+  //   header('location: paso1.php');
+  //   exit;
+  // }
+
 
  ?>
 
@@ -18,7 +23,7 @@
                     <p>Selecciona tus <a href="#">películas favoritas</a> para aumentar tu nivel de coincidencia</p>
                 </div>
 
-                <h2 class="titulo-resultados"><span>¡Felicitaciones!</span> Estas son nuestras recomendaciones según tus gustos, prometemos no desfraudarte :)</h2>
+                <h2 class="titulo-resultados"><span>¡Felicitaciones!</span> Estas son nuestras recomendaciones según tus gustos, prometemos no defraudarte :)</h2>
 
                 <article class="tarjeta-resultados">
                     <img src="images/peli.jpg" class="tarjeta-pelicula" alt="">
@@ -28,17 +33,19 @@
                         <p class="generos">Acción, Drama</p>
                         <p class="actores">Actor 1, Actor2</p>
                         <p class="director">Dirigida por <strong>Director</strong></p>
-                        <a href="info.php"><div class="boton-gris">
-                          Más info
-                        </div></a>
-                        <div class="boton-gris boton-netflix">
-                          <img src="images/logo-netflix.png" alt="">
-                        </div>
-                        <div class="boton-gris trailer">
-                          <img src="images/ver-trailer.png" alt="">Trailer
-                        </div>
-                        <div class="lavi boton">
-                          La ví
+                        <div class="botones">
+                            <a href="info.php"><div class="boton-gris">
+                              Más info
+                            </div></a>
+                            <div class="boton-gris boton-netflix">
+                              <img src="images/logo-netflix.png" alt="">
+                            </div>
+                            <div class="boton-gris trailer">
+                              <img src="images/ver-trailer.png" alt="">Trailer
+                            </div>
+                            <div class="lavi boton">
+                              La ví
+                            </div>
                         </div>
                     </div>
                 </article>
@@ -51,17 +58,19 @@
                         <p class="generos">Acción, Drama</p>
                         <p class="actores">Actor 1, Actor2</p>
                         <p class="director">Dirigida por <strong>Director</strong></p>
-                        <a href="info.php"><div class="boton-gris">
-                          Más info
-                        </div></a>
-                        <div class="boton-gris boton-netflix">
-                          <img src="images/logo-netflix.png" alt="">
-                        </div>
-                        <div class="boton-gris trailer">
-                          <img src="images/ver-trailer.png" alt="">Trailer
-                        </div>
-                        <div class="lavi boton">
-                          La ví
+                        <div class="botones">
+                            <a href="info.php"><div class="boton-gris">
+                              Más info
+                            </div></a>
+                            <div class="boton-gris boton-netflix">
+                              <img src="images/logo-netflix.png" alt="">
+                            </div>
+                            <div class="boton-gris trailer">
+                              <img src="images/ver-trailer.png" alt="">Trailer
+                            </div>
+                            <div class="lavi boton">
+                              La ví
+                            </div>
                         </div>
                     </div>
                 </article>
@@ -74,17 +83,19 @@
                         <p class="generos">Acción, Drama</p>
                         <p class="actores">Actor 1, Actor2</p>
                         <p class="director">Dirigida por <strong>Director</strong></p>
-                        <a href="info.php"><div class="boton-gris">
-                          Más info
-                        </div></a>
-                        <div class="boton-gris boton-netflix">
-                          <img src="images/logo-netflix.png" alt="">
-                        </div>
-                        <div class="boton-gris trailer">
-                          <img src="images/ver-trailer.png" alt="">Trailer
-                        </div>
-                        <div class="lavi boton">
-                          La ví
+                        <div class="botones">
+                            <a href="info.php"><div class="boton-gris">
+                              Más info
+                            </div></a>
+                            <div class="boton-gris boton-netflix">
+                              <img src="images/logo-netflix.png" alt="">
+                            </div>
+                            <div class="boton-gris trailer">
+                              <img src="images/ver-trailer.png" alt="">Trailer
+                            </div>
+                            <div class="lavi boton">
+                              La ví
+                            </div>
                         </div>
                     </div>
                 </article>

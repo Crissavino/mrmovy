@@ -71,6 +71,10 @@
     border-bottom: 5px solid #e6e6e6;
   }
 
+  .texto-azul {
+    color:  #00c0f7;
+  }
+
 /* BLOQUE DE INICIO */
 
   .inicio {
@@ -324,179 +328,253 @@
 
 /* FORMULARIO LOGIN Y REGISTRO */
 
-.login {
-  padding: 100px 0px;
-  overflow: hidden;
-}
+  .login {
+    padding: 100px 0px;
+    overflow: hidden;
+  }
 
-.texto-formulario {
-  width: 40%;
-  float: left;
-  padding-top: 50px;
-}
+  .texto-formulario {
+    width: 40%;
+    float: left;
+    padding-top: 50px;
+  }
 
-.texto-formulario h2 {
-  font-size: 42px;
-  color: #4f4f4f;
-  font-weight: 400;
-}
+  .texto-formulario h2 {
+    font-size: 42px;
+    color: #4f4f4f;
+    font-weight: 400;
+  }
 
-.texto-formulario h2 span {
-  color: #00c0f7;
-  font-weight: 400;
-}
+  .texto-formulario h2 span {
+    color: #00c0f7;
+    font-weight: 400;
+  }
 
-.texto-formulario p {
-  font-size: 20px;
-  padding: 20px 0px 40px 0px;
-  color: #727272;
-}
+  .texto-formulario p {
+    font-size: 20px;
+    padding: 20px 0px 40px 0px;
+    color: #727272;
+  }
 
-.texto-formulario a{
-  color: #00c0f7;
-  display:inline-block;
-  font-size: 20px;
-  text-decoration: none;
-}
+  .texto-formulario a{
+    color: #00c0f7;
+    display:inline-block;
+    font-size: 20px;
+    text-decoration: none;
+  }
 
-.formulario {
-  width: 50%;
-  background-color: #fff;
-  margin-left: 70px;
-  display: inline-block;
-  float: left;
-  padding: 40px;
-  border-radius: 10px;
-  -webkit-box-shadow: 1px 1px 0px 0px rgba(0,0,0,0.15);
-  -moz-box-shadow: 1px 1px 0px 0px rgba(0,0,0,0.15);
-  box-shadow: 1px 1px 0px 0px rgba(0,0,0,0.15);
-}
+  .formulario {
+    width: 50%;
+    background-color: #fff;
+    margin-left: 70px;
+    display: inline-block;
+    float: left;
+    padding: 40px;
+    border-radius: 10px;
+    -webkit-box-shadow: 1px 1px 0px 0px rgba(0,0,0,0.15);
+    -moz-box-shadow: 1px 1px 0px 0px rgba(0,0,0,0.15);
+    box-shadow: 1px 1px 0px 0px rgba(0,0,0,0.15);
+  }
 
-.formulario form input {
-  box-sizing: border-box;
-  width:100%;
-  border: none;
-  height: 60px;
-  background-color: #f4f4f4;
-  font-size: 18px;
-  margin-bottom: 10px;
-  padding: 0px 10px;
-  border-radius: 5px;
-}
+  .formulario form input {
+    box-sizing: border-box;
+    width:100%;
+    border: none;
+    height: 60px;
+    background-color: #f4f4f4;
+    font-size: 18px;
+    margin-bottom: 10px;
+    padding: 0px 10px;
+    border-radius: 5px;
+  }
 
-.formulario form button {
-  float: right;
-}
+  .formulario form button {
+    float: right;
+  }
 
-.label-checkbox {
-  padding-top: 10px;
-  margin-right: 15px;
-  font-size: 18px;
-}
+  .label-checkbox {
+    padding-top: 10px;
+    margin-right: 15px;
+    font-size: 18px;
+  }
 
-#recordar {
-  width: auto;
-  height: auto;
-  margin-top: 16px;
-}
+  #recordar {
+    width: auto;
+    height: auto;
+    margin-top: 16px;
+  }
 
 /* MENU USUARIOS GENERALES */
 
-.notificacion {
-  width: 100%;
-  padding: 20px;
-  background-color: #fff;
-  margin: 30px 0px;
-  border-radius: 5px;
-  font-size: 18px;
-  color: #353535;
-}
+  .notificacion {
+    width: 100%;
+    padding: 20px;
+    background-color: #fff;
+    margin: 30px 0px;
+    border-radius: 5px;
+    font-size: 18px;
+    color: #353535;
+  }
 
-.notificacion a {
-  color: #00c0f7;
-  text-decoration: none;
+  .notificacion a {
+    color: #00c0f7;
+    text-decoration: none;
 
-}
+  }
 
 
-/* RESULTADOS DE PELICULAS */
+  /* RESULTADOS DE PELICULAS */
 
-.titulo-resultados {
-  font-size: 36px;
-  color: #353535;
-  font-weight: 400;
-  text-align: center;
-  padding: 20px 0px 50px 0px;
-}
+  .titulo-resultados {
+    font-size: 36px;
+    color: #353535;
+    font-weight: 400;
+    text-align: center;
+    padding: 20px 0px 50px 0px;
+  }
 
-.titulo-resultados span {
-  color: #00c0f7;
-  font-weight: 400;
-}
+  .titulo-resultados span {
+    color: #00c0f7;
+    font-weight: 400;
+  }
 
-.tarjeta-resultados {
-  width: 750px;
-  border-radius: 10px;
-  background-color: #fff;
-  margin: 0px auto;
-  margin-bottom: 50px;
-  overflow: hidden;
-  padding: 20px;
-  -webkit-box-shadow: 1px 1px 0px 0px rgba(0,0,0,0.15);
-  -moz-box-shadow: 1px 1px 0px 0px rgba(0,0,0,0.15);
-  box-shadow: 1px 1px 0px 0px rgba(0,0,0,0.15);
-}
+  .tarjeta-resultados {
+    width: 750px;
+    border-radius: 10px;
+    background-color: #fff;
+    margin: 0px auto;
+    margin-bottom: 50px;
+    overflow: hidden;
+    padding: 20px;
+    -webkit-box-shadow: 1px 1px 0px 0px rgba(0,0,0,0.15);
+    -moz-box-shadow: 1px 1px 0px 0px rgba(0,0,0,0.15);
+    box-shadow: 1px 1px 0px 0px rgba(0,0,0,0.15);
+  }
 
-.tarjeta-pelicula {
-  width: 150px;
-  float: left;
-  border-radius: 5px;
-  margin-right: 25px;
-}
+  .tarjeta-pelicula {
+    width: 150px;
+    float: left;
+    border-radius: 5px;
+    margin-right: 25px;
+  }
 
-.pelicula h2 {
-  color: #5c5c5c;
-  font-size: 31px;
-  font-weight: 400;
-  float: left;
-  padding-right: 10px;
-}
+  .pelicula h2 {
+    color: #5c5c5c;
+    font-size: 31px;
+    font-weight: 400;
+    float: left;
+    padding-right: 10px;
+  }
 
-.pelicula p {
-  font-size: 18px;
-}
+  .pelicula p {
+    font-size: 18px;
+  }
 
-.pelicula .fecha {
-  font-size: 12px;
-  color: #bebebe;
-  padding-top: 20px;
-  margin-left: 10px;
-}
+  .pelicula .fecha {
+    font-size: 12px;
+    color: #bebebe;
+    padding-top: 20px;
+    margin-left: 10px;
+  }
 
-.pelicula .generos {
-  width: 50%;
-  color: #00c0f7;
-  padding: 15px 0px;
-}
+  .pelicula .generos {
+    width: 50%;
+    color: #00c0f7;
+    padding: 15px 0px;
+  }
 
-.pelicula .director {
-  padding-bottom: 25px;
-}
+  .pelicula .director {
+    padding-bottom: 25px;
+  }
 
-.pelicula .director strong {
-  font-weight: 400;
-}
+  .pelicula .director strong {
+    font-weight: 400;
+  }
 
-.pelicula .boton-gris {
-  margin-right: 5px;
-}
+  .pelicula .boton-gris {
+    margin-right: 5px;
+  }
 
-.pelicula .trailer img{
-  vertical-align: middle;
-  margin-top: -3px;
-  margin-right: 5px;
-}
+  .trailer img{
+    vertical-align: middle;
+    margin-top: -3px;
+    margin-right: 5px;
+  }
 
-.pelicula .boton-netflix {
-  padding: 16px 20px 14px 20px;
-}
+  .pelicula .boton-netflix {
+    padding: 16px 20px 14px 20px;
+  }
+
+/* ESTILOS DE INFORMACIÓN DE PELICULAS */
+
+  .mas-info {
+    padding: 50px 0px;
+    overflow: hidden;
+  }
+
+  .mas-info .sidebar {
+    width: 230px;
+    float: left;
+    margin-right: 50px;
+  }
+
+  .mas-info .sidebar .portada-pelicula {
+    width: 230px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+  }
+
+  .mas-info .boton {
+    width: 100%;
+    text-align: center;
+  }
+
+  .mas-info .botones-extras {
+    background-color: #fff;
+    border-radius: 5px;
+    margin-top: 15px;
+    overflow: hidden;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .info-pelicula {
+    float: left;
+    width: 700px;
+  }
+
+  .info-pelicula h1 {
+    font-size: 42px;
+    color: #555;
+    padding-bottom: 30px;
+  }
+
+  .info-pelicula .boton-info {
+    background-color: #fff;
+    padding: 20px 20px;
+    border-radius: 5px;
+    -webkit-box-shadow: 1px 1px 0px 0px rgba(0,0,0,0.15);
+    -moz-box-shadow: 1px 1px 0px 0px rgba(0,0,0,0.15);
+    box-shadow: 1px 1px 0px 0px rgba(0,0,0,0.15);
+    float: left;
+    margin-right: 10px;
+  }
+
+  .info-pelicula .resumen-pelicula {
+    clear: both;
+  }
+
+  .info-pelicula .resumen-pelicula p{
+    text-align: justify;
+    padding-top: 40px;
+    font-size: 20px;
+    color: #696969;
+  }
+
+  .info-pelicula h2 {
+    font-size: 22px;
+    color: #555;
+    font-weight: 400;
+    padding: 25px 0px;
+    clear: both;
+  }
