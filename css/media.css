@@ -295,16 +295,6 @@
         clear: both;
         }
 
-        .mas-info .info-pelicula .boton-info:nth-child(4){
-            margin-top: 10px;
-        }
-
-        .mas-info .info-pelicula .boton-info:nth-child(9){
-            margin-top: 10px;
-        }
-
-
-
 }
 
 @media (max-width: 390px) {
@@ -322,4 +312,20 @@
 }
 
   /* Ver como acomodamos el footer de la mejor manera para mobile, achico la letra? */
+}
+
+@media (max-width:370px) {
+
+    .mas-info .info-pelicula .boton-info:nth-child(4){
+        margin-top: 10px;
+    }
+
+}
+
+@media (max-width:315px) {
+
+    .mas-info .info-pelicula .boton-info:nth-child(9){
+        margin-top: 10px;
+    }
+    
 }
