@@ -21,22 +21,27 @@
       <section class="contenedor mas-info">
 
         <div class="sidebar">
-          <img src="images/peli.jpg" alt="" class="portada-pelicula">
-          <a href="resultados.php">
-            <div class="boton">
-              Volver a los resultados
-            </div>
-          </a>
-
-          <div class="botones-extras">
-            <div class="boton-gris">
-              <img src="images/logo-netflix.png" alt="">
+            <div class="portada-sidebar">
+                <img src="images/peli.jpg" alt="" class="portada-pelicula">
             </div>
 
-            <div class="boton-gris trailer">
-              <img src="images/ver-trailer.png" alt="">Trailer
+            <div class="botones-sidebar">
+                <a href="resultados.php">
+                  <div class="boton">
+                    Volver a los resultados
+                  </div>
+                </a>
+                <div class="botones-extras">
+                  <div class="boton-gris">
+                    <img src="images/logo-netflix.png" alt="">
+                  </div>
+
+                  <div class="boton-gris trailer">
+                    <img src="images/ver-trailer.png" alt="">Trailer
+                  </div>
+                </div>
             </div>
-          </div>
+
         </div>
 
         <div class="info-pelicula">
