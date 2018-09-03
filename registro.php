@@ -24,7 +24,8 @@
       //guardo el usuario que recibo por $_POST
       guardarUsuario($_POST);
       //logueo al usuario que recibo por $_POST
-      loguearUsuario($_POST);
+      $usuario = traerPorEmail($email);
+      loguearUsuario($usuario);
       exit;
     }
   }

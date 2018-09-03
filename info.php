@@ -31,6 +31,9 @@
                     Volver a los resultados
                   </div>
                 </a>
+                <div class="boton-verde">
+                  Marcar como favorita
+                </div>
                 <div class="botones-extras">
                   <div class="boton-gris">
                     <img src="images/logo-netflix.png" alt="">

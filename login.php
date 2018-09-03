@@ -5,7 +5,12 @@
 
   // Si está logueado, lo redirigo directamente a los resultados, no lo dejo loguerase de nuevo
   if (estaLogueado()) {
-    header('location: resultados.php');
+    if (completoEncuesta($_SESSION['id']) == true) {
+      header('location: resultados.php');
+    } else {
+      header('location: paso1.php');
+    }
+
     exit;
   }
   //incializo $email vacio para persistirla

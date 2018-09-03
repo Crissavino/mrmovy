@@ -3,7 +3,6 @@
 
 <?php
 
-
   // Si no está logueado, mando al usuario al login
   if (!estaLogueado()) {
     header('location: login.php');
@@ -22,15 +21,15 @@
                         <img src="" alt="">
                         <div>
                             <span>1 de 10</span>
-                            <p><?php //titulo de la pelicula y año ?></p>
+                            <p>The Shawshank Redemption</p>
 
                             <div class="">
                                 <form class="" action="resultados.php" method="post">
 
-                                    <button type="button" class="boton" name="button" value="">La ví y me gustó</button>
-                                    <button type="button" class="boton" name="button" value="">La ví y me dá igual</button>
-                                    <button type="button" class="boton" name="button" value="">La ví y no me gusto</button>
-                                    <button type="button" class="boton" name="button" value="">No la ví</button>
+                                    <button type="submit" class="boton" name="button" value="">La ví y me gustó</button>
+                                    <button type="submit" class="boton" name="button" value="">La ví y me dá igual</button>
+                                    <button type="submit" class="boton" name="button" value="">La ví y no me gusto</button>
+                                    <button type="submit" class="boton" name="button" value="">No la ví</button>
 
 
                                 </form>

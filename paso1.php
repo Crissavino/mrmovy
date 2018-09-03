@@ -9,13 +9,18 @@
     exit;
   }
 
+  if (completoEncuesta($_SESSION['id']) == true) {
+    header('location: resultados.php');
+    exit;
+  }
+
 
  ?>
 
 
             <section class="contenedor">
 
-                <div class="">
+                <div class="notificacion">
                     <p><span>¡Bienvenido <?php //nombre guardado en la cookie ?>!</span> Ayúdanos a configurar tus gustos y preferencias, será breve :)</p>
                 </div>
 

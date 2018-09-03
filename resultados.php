@@ -8,11 +8,14 @@
     exit;
   }
 
-  // if (no completo la encuesta) {
-  //   header('location: paso1.php');
-  //   exit;
-  // }
+  if ($_POST) {
+    cambiarEncuesta($_SESSION['id']);
+  }
 
+  if (!completoEncuesta($_SESSION['id'])) {
+    header('location: paso1.php');
+    exit;
+  }
 
  ?>
 

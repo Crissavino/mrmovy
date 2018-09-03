@@ -208,7 +208,6 @@
         }
 
         .mas-info .sidebar .botones-sidebar{
-            margin-top: 10%;
             float: left;
             width: 47%;
         }
@@ -327,5 +326,5 @@
     .mas-info .info-pelicula .boton-info:nth-child(9){
         margin-top: 10px;
     }
-    
+
 }
