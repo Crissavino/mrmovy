@@ -1,9 +1,19 @@
-<?php require_once('header.php') ?>
+<?php 
+  require_once('header.php');
+  require ('classes/Validador.php');
+  require ('classes/JSON_DB.php'); 
+  require ('classes/Auth.php'); 
+?>
 
 <?php
 
+  $validador = new Validador();
+  $db = new JSON_DB();
+  $auth = new Auth();
+
+
   // Si está logueado, lo redirigo directamente a los resultados, no lo dejo registrarse de nuevo
-  if (estaLogueado()) {
+  if ($auth->estaLogueado()) {
     header('location: resultados.php');
     exit;
   }
@@ -11,20 +21,21 @@
   $email = "";
   //incializo el arreglo errores vacio
   $errores = [];
+  
 
   //si llega algo por $_POST, es decir, si escribe algo en el login
   if ($_POST) {
     //trimeo el email para quitar los espacios
     $email = trim($_POST['email']);
     //compruebo que se hayan llenado correctamente todos los campos y que el usuario no este registrado
-    $errores = validar($_POST);
+    $errores = $validador->Registro($_POST, $db);
     //si no existe ningun error, es decir, si el array $errores esta vacio (empty)
     if (empty($errores)) {
       //guardo el usuario que recibo por $_POST
-      guardarUsuario($_POST);
+      $db->guardarUsuario($_POST);
       //logueo al usuario que recibo por $_POST
-      $usuario = traerPorEmail($email);
-      loguearUsuario($usuario);
+      $usuario = $db->traerPorEmail($email);
+      $auth->loguearUsuario($usuario);
       exit;
     }
   }
