@@ -1,6 +1,7 @@
 <?php 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 class MySQL_DB extends DB
 {
 	protected $conexion;
@@ -74,6 +75,8 @@ class MySQL_DB extends DB
 
     }
 =======
+=======
+>>>>>>> 53867b645d342a9b9d423d3aadfa1ef4a8f9de69
 /**
  * 
  */
@@ -87,5 +90,8 @@ class MySQL_DB extends DB
 
 
 	// Va el insert, update y delete
+<<<<<<< HEAD
+>>>>>>> 53867b645d342a9b9d423d3aadfa1ef4a8f9de69
+=======
 >>>>>>> 53867b645d342a9b9d423d3aadfa1ef4a8f9de69
 }
