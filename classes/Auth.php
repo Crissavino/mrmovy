@@ -18,14 +18,6 @@ class Auth
 
 	public function estaLogueado()
 	{
-<<<<<<< HEAD
-<<<<<<< HEAD
 		return isset($_SESSION['id']);
-=======
-		 return isset($_SESSION['id']);
->>>>>>> 53867b645d342a9b9d423d3aadfa1ef4a8f9de69
-=======
-		 return isset($_SESSION['id']);
->>>>>>> 53867b645d342a9b9d423d3aadfa1ef4a8f9de69
 	}
 }
