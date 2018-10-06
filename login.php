@@ -1,38 +1,47 @@
-<?php require_once('header.php') ?>
-<?php require_once('funciones.php') ?>
-
+<?php
+  require_once('header.php'); 
+  require ('classes/Validador.php');
+  require ('classes/JSON_DB.php');
+  require ('classes/Auth.php');
+  ?>
 <?php
 
-  // Si está logueado, lo redirigo directamente a los resultados, no lo dejo loguerase de nuevo
-  if (estaLogueado()) {
-    header('location: resultados.php');
+  $validador = new Validador();
+  $db = new JSON_DB();
+  $auth = new Auth();
+
+  if ($auth->estaLogueado()) {
+    if (completoEncuesta($_SESSION['id']) == true) {
+      header('location: resultados.php');
+    } else {
+      header('location: paso1.php');
+    }
+
     exit;
   }
-  //incializo $email vacio para persistirla
+  
   $email = '';
-  //incializo el arreglo errores vacio
   $errores = [];
-  //si llega algo por $_POST, es decir, si escribe algo en el login
+
+  
   if ($_POST) {
-      //trimeo el email para quitar los espacios
     $email = trim($_POST['email']);
-    //asigno a $errores el valor que devuelve la funcion validarLogin (recordar que devuelve, si hay, el array $errores con los errores que tenga)
-    $errores = validarLogin($_POST);
+    $errores = $validador->Login($_POST, $db);
 
     if (empty($errores)) {
 
-        $usuario = traerPorEmail($email);
+        $usuario = $db->traerPorEmail($email);
 
-        // Primero me fijo si está checkeado el recordar y si es así guardo la cookie
+        // Se remplaza por new usuario
+
         if (isset($_POST['recordar'])) {
-            //si esta tildado el checkbok de recordarme
             $expira = time() + 3600*24*365;
-            //expire en un año
             setcookie('id', $usuario['id'], $expira);
         }
+        
+        $auth->loguearUsuario($usuario);
 
-        // Logueo al usuario y como ya tiene la redireccion no es necesaria
-        loguearUsuario($usuario);
+        // se remplazaz por auth usuario
         exit;
     }
   }

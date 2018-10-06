@@ -1,4 +1,3 @@
-<?php require_once('funciones.php') ?>
 <?php require_once('header.php') ?>
 
 <?php
@@ -19,51 +18,51 @@
                 <section class="tematica">
                     <form class="" action="paso3.php" method="post">
 
-                        <div class="tematica">
+                        <div class="genero_tag">
                             <input type="checkbox" name="tematica" value="amor">
                             <label for="">amor</label>
                         </div>
-                        <div class="tematica">
+                        <div class="genero_tag">
                             <input type="checkbox" name="tematica" value="disparos">
                             <label for="">disparos</label>
                         </div>
-                        <div class="tematica">
+                        <div class="genero_tag">
                             <input type="checkbox" name="tematica" value="dinero">
                             <label for="">dinero</label>
                         </div>
-                        <div class="tematica">
+                        <div class="genero_tag">
                             <input type="checkbox" name="tematica" value="musica">
                             <label for="">musica</label>
                         </div>
-                        <div class="tematica">
+                        <div class="genero_tag">
                             <input type="checkbox" name="tematica" value="accion">
                             <label for="">acción</label>
                         </div>
-                        <div class="tematica">
+                        <div class="genero_tag">
                             <input type="checkbox" name="tematica" value="accion">
                             <label for="">acción</label>
                         </div>
-                        <div class="tematica">
+                        <div class="genero_tag">
                             <input type="checkbox" name="tematica" value="accion">
                             <label for="">acción</label>
                         </div>
-                        <div class="tematica">
+                        <div class="genero_tag">
                             <input type="checkbox" name="tematica" value="accion">
                             <label for="">acción</label>
                         </div>
-                        <div class="tematica">
+                        <div class="genero_tag">
                             <input type="checkbox" name="tematica" value="accion">
                             <label for="">acción</label>
                         </div>
-                        <div class="tematica">
+                        <div class="genero_tag">
                             <input type="checkbox" name="tematica" value="accion">
                             <label for="">acción</label>
                         </div>
-                        <div class="tematica">
+                        <div class="genero_tag">
                             <input type="checkbox" name="tematica" value="accion">
                             <label for="">acción</label>
                         </div>
-                        <div class="tematica">
+                        <div class="genero_tag">
                             <input type="checkbox" name="tematica" value="accion">
                             <label for="">acción</label>
                         </div>

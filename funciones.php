@@ -60,7 +60,7 @@ function guardarUsuario($dato) {
   //le asigno un id con la funcion asignarid, que toma el ultimo id y le suma 1, pero si no hay ningun usuario arranca a contar
   $usuario['id'] = asignarID();
   // $usuario['avatar'] = dirname(__FILE__) . '/images' . '/avatares/' . $dato['email'] .'.'. $ext;
-  // $usuario['encuesta'] = 0;
+  $usuario['encuesta'] = '0';
 
   //codifico al usuario en json
   $usuarioJSON = json_encode($usuario);
@@ -110,6 +110,23 @@ function traerPorEmail($email) {
 
 }
 
+function traerPorID($id) {
+    //me traigo el id asociado a cada usuario
+
+  $usuarios = traerTodos();
+  //a la variable $usuarios le asigno todos los usuarios registrados
+
+  foreach ($usuarios as $usuario) {
+      //recorro el arregle de todos los usuarios y obtengo cada usuario separado
+    if ($usuario['id'] == $id) {
+
+      return $usuario;
+    }
+  }
+  //si no existe devuelvo false
+  return false;
+}
+
 function traerTodos() {
     //traigo todos los usuarios registrados
 
@@ -130,8 +147,6 @@ function traerTodos() {
 
   return $usuariosPHP;
   //devuelvo todos los usuarios en formato php (uno por array)
-
-
 
 }
 
@@ -176,6 +191,7 @@ function validarCarga($dato, $portada){
 
     $titulo = $dato['titulo'];
     $genero = $dato['genero'];
+    $tag = $dato['tag'];
     $anio = $dato['anio'];
     $duracion = $dato['duracion'];
     $resumen = $dato['resumen'];
@@ -203,6 +219,10 @@ function validarCarga($dato, $portada){
 
     if ($dato['genero'] == '') {
         $erroresCarga['genero'] = 'Ingresá un género';
+    }
+
+    if ($dato['tag'] == '') {
+        $erroresCarga['tag'] = 'Ingresá un tag';
     }
 
     if ($dato['anio'] == '') {
@@ -264,6 +284,8 @@ function guardarPelicula($dato, $portada){
 
     $pelicula['genero'] = $dato['genero'];
 
+    $pelicula['tag'] = $dato['tag'];
+
     $pelicula['anio'] = $dato['anio'];
 
     $pelicula['duracion'] = $dato['duracion'];
@@ -281,4 +303,35 @@ function guardarPelicula($dato, $portada){
     $peliculasJSON = json_encode($pelicula);
 
     file_put_contents('peliculas.json', $peliculasJSON . PHP_EOL, FILE_APPEND);
+}
+
+// FUNCIONES DE ENCUESTA
+
+function cambiarEncuesta($usuarioACambiar){
+
+  $usuarios = traerTodos();
+
+  file_put_contents('usuarios.json', null);
+
+
+  foreach ($usuarios as $usuario) {
+    if ($usuario['id'] == $usuarioACambiar) {
+      $usuario['encuesta'] = '1';
+    }
+    $usuarioJSON = json_encode($usuario);
+    file_put_contents('usuarios.json', $usuarioJSON . PHP_EOL, FILE_APPEND);
+  }
+
+
+}
+
+function completoEncuesta($usuario) {
+   $user = traerPorID($usuario);
+
+   if ($user['encuesta'] == 1) {
+     return true;
+   } else {
+     return false;
+   }
+
 }

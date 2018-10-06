@@ -1,7 +1,9 @@
 <?php require_once('funciones.php') ?>
 
-
-
+<?php if (estaLogueado()) {
+  header('location: resultados.php');
+  exit;
+} ?>
 
 <!DOCTYPE html>
 <html lang="es" dir="ltr">

@@ -1,4 +1,3 @@
-<?php require_once('funciones.php') ?>
 <?php require_once('header.php') ?>
 
 <?php
@@ -31,6 +30,9 @@
                     Volver a los resultados
                   </div>
                 </a>
+                <div class="boton-verde">
+                  Marcar como favorita
+                </div>
                 <div class="botones-extras">
                   <div class="boton-gris">
                     <img src="images/logo-netflix.png" alt="">

@@ -10,6 +10,7 @@
   // inicializo las variables para persistirlas
     $titulo = '';
     $genero = '';
+    $tag = '';
     $anio = '';
     $duracion = '';
     $resumen = '';
@@ -23,6 +24,7 @@
     if ($_POST) {
         $titulo = $_POST['titulo'];
         $genero = $_POST['genero'];
+        $tag = $_POST['tag'];
         $anio = $_POST['anio'];
         $duracion = $_POST['duracion'];
         $resumen = $_POST['resumen'];
@@ -65,6 +67,10 @@
                 <label for="">Géneros: </label><br>
                 <input type="text" name="genero" value="<?= $genero ?>"><br>
                 <?= isset($erroresCarga['genero']) ? $erroresCarga['genero'] : '' ?><br>
+
+                <label for="">Tags: </label><br>
+                <input type="text" name="tag" value="<?= $tag ?>"><br>
+                <?= isset($erroresCarga['tag']) ? $erroresCarga['tag'] : '' ?><br>
 
                 <label for="">Año: </label><br>
                 <input type="text" name="anio" value="<?= $anio ?>"><br>
