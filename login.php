@@ -1,13 +1,10 @@
 <?php
-  require_once('header.php'); 
+  require_once('header.php');
   require ('classes/Validador.php');
-  require ('classes/JSON_DB.php');
-  require ('classes/Auth.php');
-  ?>
-<?php
+  require ('classes/Auth.php'); 
+  require ('classes/Usuario.php');
 
   $validador = new Validador();
-  $db = new JSON_DB();
   $auth = new Auth();
 
   if ($auth->estaLogueado()) {
@@ -22,26 +19,22 @@
   
   $email = '';
   $errores = [];
-
   
   if ($_POST) {
     $email = trim($_POST['email']);
-    $errores = $validador->Login($_POST, $db);
+    $errores = $validador->Login($_POST);
 
     if (empty($errores)) {
 
-        $usuario = $db->traerPorEmail($email);
-
-        // Se remplaza por new usuario
+        $usuario = new Usuario(['email' => $email, 'pass' => password_hash($_POST['pass'], PASSWORD_DEFAULT)]); 
 
         if (isset($_POST['recordar'])) {
             $expira = time() + 3600*24*365;
             setcookie('id', $usuario['id'], $expira);
         }
         
-        $auth->loguearUsuario($usuario);
+        $auth->loguearUsuario($usuario->getAttr('email'));
 
-        // se remplazaz por auth usuario
         exit;
     }
   }

@@ -1,16 +1,18 @@
 <?php
 
-class Modelo
+require('MySQL_DB.php');
+
+class Model
 {
   public $table;
   public $columns;
   public $datos;
   protected $db;
 
-  public function __construct($datos=[])
+  public function __construct($datos)
   {
     $this->datos = $datos;
-    $this->db = new JSON_DB();
+    $this->db = new MySQL_DB();
   }
 
   public function save()
@@ -24,7 +26,7 @@ class Modelo
 
   private function insert()
   {
-    $this->db->insert($this->datos, $this);
+    $this->db->insert($this);
   }
 
   public function getAttr($attr)
@@ -36,8 +38,6 @@ class Modelo
   {
     $this->datos[$attr] = $value;
   }
-
-  // Falta funcion de update
 
 
 }

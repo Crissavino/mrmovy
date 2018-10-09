@@ -6,9 +6,9 @@
 class Auth
 {
 	
-	public function loguearUsuario($usuario)
+	public function loguearUsuario($email)
 	{
-		$_SESSION['id'] = $usuario['id'];
+		$_SESSION['id'] = $email;
 
 		// Acá vamos a tener que hacer un if y preguntar si el usuario ya completo la encuesta
 

@@ -1,15 +1,12 @@
 <?php 
 
+	require('classes/Model.php');
+
 
 class Usuario extends Model
 {
 	
-	public $table = 'usuarios';
-	public $columns = ['email', 'pass', 'encuesta']
+	public $table = 'users';
+	public $columns = ['email', 'pass'];
 
-	public function __construct()
-	{
-		$this-encuesta = 0;
-	}
-	
 }
