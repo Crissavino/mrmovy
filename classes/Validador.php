@@ -63,4 +63,74 @@ class Validador
 		//devuelvo los errores
 		return $errores;
 	}
+
+	public function Pelicula($dato, $cover)
+	{
+		$title = $dato['title'];
+	    $genre_id = $dato['genre_id'];
+	    $tag_id = $dato['tag_id'];
+	    $year = $dato['year'];
+	    $length = $dato['length'];
+	    $resume = $dato['resume'];
+	    $actor = $dato['actor'];
+	    $producer = $dato['producer'];
+	    $netflix = $dato['netflix'];
+	    $trailer = $dato['trailer'];
+
+	    $erroresCarga = [];
+
+	    //ACA LE DEBERIA PASAR POR PARAMETRO $cover PERO NO SE COMO GUARDAR LA IMAGEN EN LA BASE DE DATOS
+
+	    if ($_FILES[$cover]['error'] != UPLOAD_ERR_OK) { // si no se subio ninguna cover
+		$erroresCarga['cover'] = "Por favor subí una portada";
+		   } else {
+	  		$ext = strtolower(pathinfo($_FILES[$cover]['name'], PATHINFO_EXTENSION));
+	  		if ($ext != 'jpg' && $ext != 'png' && $ext != 'jpeg') {
+	  			$erroresCarga['cover'] = "Formatos admitidos: JPG o PNG";
+	  		}
+		   }
+
+	    if ($dato['title'] == '') {
+        $erroresCarga['title'] = 'Ingresá un título';
+	    }
+
+	    if ($dato['genre_id'] == '') {
+	        $erroresCarga['genre_id'] = 'Ingresá un género';
+	    }
+
+	    if ($dato['tag_id'] == '') {
+	        $erroresCarga['tag_id'] = 'Ingresá un tag';
+	    }
+
+	    if ($dato['year'] == '') {
+	        $erroresCarga['year'] = 'Ingresá un año';
+	    }
+
+	    if ($dato['length'] == '') {
+	        $erroresCarga['length'] = 'Ingresá un duración';
+	    }
+
+	    if ($dato['resume'] == '') {
+	        $erroresCarga['resume'] = 'Ingresá un resúmen';
+	    }
+
+	    if ($dato['actor'] == '') {
+	        $erroresCarga['actor'] = 'Ingresá un actores';
+	    }
+
+	    if ($dato['producer'] == '') {
+	        $erroresCarga['producer'] = 'Ingresá un producción';
+	    }
+
+	    if ($dato['netflix'] == '') {
+	        $erroresCarga['netflix'] = 'Ingresá un Netflix';
+	    }
+
+	    if ($dato['trailer'] == '') {
+	        $erroresCarga['trailer'] = 'Ingresá un trailer';
+	    }
+
+	    return $erroresCarga;
+
+	}
 }

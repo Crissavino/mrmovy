@@ -1,45 +1,74 @@
-<?php require_once('funciones.php') ?>
-<?php require_once('header.php') ?>
+<?php 
+require_once('funciones.php') 
+?>
+
+<?php 
+    require_once('header.php');
+    require ('classes/Validador.php');
+    require ('classes/Auth.php'); 
+    require ('classes/Pelicula.php');
+?>
+
 
 <?php
 
-  if (!estaLogueado()) {
-    header('location: login.php');
-    exit;
-  }
+  $validador = new Validador();
+  $auth = new Auth();
+
+ 
+
+  // if ($auth->estaLogueado()) {
+  //   header('location: resultados.php');
+  //   exit;
+  // }
   // inicializo las variables para persistirlas
-    $titulo = '';
-    $genero = '';
-    $tag = '';
-    $anio = '';
-    $duracion = '';
-    $resumen = '';
-    $actores = '';
-    $produccion = '';
+    $title = '';
+    $genre_id = '';
+    $tag_id = '';
+    $year = '';
+    $length = '';
+    $resume = '';
+    $actor = '';
+    $producer = '';
     $netflix = '';
     $trailer = '';
 
     $erroresCarga = [];
 
     if ($_POST) {
-        $titulo = $_POST['titulo'];
-        $genero = $_POST['genero'];
-        $tag = $_POST['tag'];
-        $anio = $_POST['anio'];
-        $duracion = $_POST['duracion'];
-        $resumen = $_POST['resumen'];
-        $actores = $_POST['actores'];
-        $produccion = $_POST['produccion'];
+        $title = $_POST['title'];
+        $genre_id = $_POST['genre_id'];
+        $tag_id = $_POST['tag_id'];
+        $year = $_POST['year'];
+        $length = $_POST['length'];
+        $resume = $_POST['resume'];
+        $actor = $_POST['actor'];
+        $producer = $_POST['producer'];
         $netflix = $_POST['netflix'];
         $trailer = $_POST['trailer'];
 
-        $erroresCarga = validarCarga($_POST, 'portada');
+        $erroresCarga = $validador->Pelicula($_POST, 'cover');
 
         if (empty($erroresCarga)) {
-            //guardo la portada
-            guardarPortada('portada');
-            //guardo la pelicula
-            guardarPelicula($_POST, 'portada');
+            //guardo la portada usando las funciones no objetos
+            $cover = guardarPortada('cover');
+
+        //     //guardo la pelicula
+            $model = new Pelicula([ 'cover' => 'NADA',
+                                    'title' => $title,
+                                    'genre_id' => $genre_id,
+                                    'tag_id' => $tag_id,
+                                    'year' => $year,
+                                    'length' => $length,
+                                    'resume' => $resume,
+                                    'actor' => $actor,
+                                    'producer' => $producer,
+                                    'netflix' => $netflix,
+                                    'trailer' => $trailer
+                                ]);
+            $model->save();
+            //me devuelve bien la direccion pero no se como VERGA ponerla arriba!!!
+            $urlCover = $model->urlPortada('cover');
             header('location: perfil.php');
             exit;
         }
@@ -56,42 +85,41 @@
         <section class="contenedor">
             <form class="" action="carga.php" method="post" enctype="multipart/form-data">
                 <label for="name">Cargar la portada de la pélicula</label><br>
-                <input type="file" name="portada" value="<?= isset($_FILES['portada']) ? $_FILES['portada']['name'] : null ?>"><br>
-                <?= isset($erroresCarga['portada']) ? $erroresCarga['portada'] : '' ;?>
-
+                <input type="file" name="cover" value="<?= isset($_FILES['cover']) ? $_FILES['cover']['name'] : null ?>"><br>
+                <?= isset($erroresCarga['cover']) ? $erroresCarga['cover'] : '' ;?>
 
                 <label for="">Título: </label><br>
-                <input type="text" name="titulo" value="<?= $titulo ?>"><br>
-                <?= isset($erroresCarga['titulo']) ? $erroresCarga['titulo'] : '' ?><br>
+                <input type="text" name="title" value="<?= $title ?>"><br>
+                <?= isset($erroresCarga['title']) ? $erroresCarga['title'] : '' ?><br>
 
                 <label for="">Géneros: </label><br>
-                <input type="text" name="genero" value="<?= $genero ?>"><br>
-                <?= isset($erroresCarga['genero']) ? $erroresCarga['genero'] : '' ?><br>
+                <input type="text" name="genre_id" value="<?= $genre_id ?>"><br>
+                <?= isset($erroresCarga['genre_id']) ? $erroresCarga['genre_id'] : '' ?><br>
 
                 <label for="">Tags: </label><br>
-                <input type="text" name="tag" value="<?= $tag ?>"><br>
-                <?= isset($erroresCarga['tag']) ? $erroresCarga['tag'] : '' ?><br>
+                <input type="text" name="tag_id" value="<?= $tag_id ?>"><br>
+                <?= isset($erroresCarga['tag_id']) ? $erroresCarga['tag_id'] : '' ?><br>
 
                 <label for="">Año: </label><br>
-                <input type="text" name="anio" value="<?= $anio ?>"><br>
-                <?= isset($erroresCarga['anio']) ? $erroresCarga['anio'] : '' ?><br>
+                <input type="text" name="year" value="<?= $year ?>"><br>
+                <?= isset($erroresCarga['year']) ? $erroresCarga['year'] : '' ?><br>
 
                 <label for="">Duración: </label><br>
-                <input type="text" name="duracion" value="<?= $duracion ?>"><br>
-                <?= isset($erroresCarga['duracion']) ? $erroresCarga['duracion'] : '' ?><br>
+                <input type="text" name="length" value="<?= $length ?>"><br>
+                <?= isset($erroresCarga['length']) ? $erroresCarga['length'] : '' ?><br>
 
                 <!-- ver como hacer para persistir el resumen (textarea) -->
                 <label for="">Resúmen: </label><br>
-                <textarea name="resumen" rows="8" cols="80" value="<?= $resumen ?>"></textarea><br>
-                <?= isset($erroresCarga['resumen']) ? $erroresCarga['resumen'] : '' ?><br>
+                <textarea name="resume" rows="8" cols="80" value="<?= $resume ?>"></textarea><br>
+                <?= isset($erroresCarga['resume']) ? $erroresCarga['resume'] : '' ?><br>
 
                 <label for="">Actores: </label><br>
-                <input type="text" name="actores" value="<?= $actores ?>"><br>
-                <?= isset($erroresCarga['actores']) ? $erroresCarga['actores'] : '' ?><br>
+                <input type="text" name="actor" value="<?= $actor ?>"><br>
+                <?= isset($erroresCarga['actor']) ? $erroresCarga['actor'] : '' ?><br>
 
                 <label for="">Producción: </label><br>
-                <input type="text" name="produccion" value="<?= $produccion ?>"><br>
-                <?= isset($erroresCarga['produccion']) ? $erroresCarga['produccion'] : '' ?><br>
+                <input type="text" name="producer" value="<?= $producer ?>"><br>
+                <?= isset($erroresCarga['producer']) ? $erroresCarga['producer'] : '' ?><br>
 
                 <label for="">Enlace a Netflix: </label><br>
                 <input type="url" name="netflix" value="<?= $netflix ?>"><br>

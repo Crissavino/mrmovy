@@ -38,7 +38,6 @@ class MySQL_DB extends DB
 
 		$sql = str_replace(', )', ')', $sql);
 
-
 		try {
 			$stmt = $this->conexion->prepare($sql);
 			$stmt->execute();
