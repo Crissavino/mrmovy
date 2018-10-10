@@ -20,7 +20,8 @@ class MySQL_DB extends DB
 	}
 
 
-	public function insert($modelo){
+	public function insert($modelo)
+	{
 
 		$sql = "INSERT INTO ".$modelo->table." (";
 
@@ -45,27 +46,42 @@ class MySQL_DB extends DB
 		} catch(Exception $e) {
 			$e->getMessage();
 		}
-
 	}
 
-	public function update($modelo, $filtro, $iguala){
-	    //con el filtro le paso el dato para actualizar donde (WHERE) se cumpla ese filtro sea $iguala un valor que le paso por parametro
-	    $sql = "UPDATE ".$modelo->table." SET ";
+    public function update($modelo)
+    {
 
-	    foreach ($modelo->columns as $column => $value) {
-	        $sql .= "$column = $value, ";
-	    }
-	    $sql .= ")";
 
-	    $sql = str_replace(', )', ' ', $sql);
+	    	$id = $modelo->getAttr('id');	
+	    	$sql = "UPDATE ".$modelo->table." SET ";
+	    	foreach ($modelo->columns as $colum) {
+	    		$sql .= $colum. " = ";
+	    		foreach ($modelo->datos as $key => $value) {
+	    			if ($key == $colum) {
+	    				$sql .= "'".$value."'". "";
+	    			}
+	    		}
+	    		$sql .= ", ";
+	    	}
 
-	    $sql .= " WHERE $filtro = $iguala;";
+	    	$sql .= "WHERE id = $id;";
 
-	    return $sql;
 
-    }
+	    	$sql = str_replace(', WHERE', ' WHERE', $sql);
 
-    public function delete($data, $table){
+
+			try {
+				$stmt = $this->conexion->prepare($sql);
+				$stmt->execute();
+
+			} catch(Exception $e) {
+				$e->getMessage();
+			}
+	}
+
+
+    public function delete($data, $table)
+    {
         
         $sql = "DELETE FROM ".$modelo->table." WHERE ";
 
@@ -78,26 +94,36 @@ class MySQL_DB extends DB
         $sql = str_replace(', )', ';', $sql);
 
         return $sql;
-
-
     }
 
     function traerPorEmail($email)
-        {
-            $query = $this->conexion->prepare("SELECT * FROM users WHERE email = :email");
-            $query->bindValue(":email", $email);
+    {
+        $query = $this->conexion->prepare("SELECT * FROM users WHERE email = :email");
+        $query->bindValue(":email", $email);
 
-            $query->execute();
+        $query->execute();
 
-            $usuarioArray = $query->fetch(PDO::FETCH_ASSOC);
+        $usuarioArray = $query->fetch(PDO::FETCH_ASSOC);
 
-            if ($usuarioArray) {
+        if ($usuarioArray) {
 
-                $usuario = new Usuario(['email' => $usuarioArray['email'], 'pass' => $usuarioArray['pass']]);
-                return $usuario;
+            $usuario = new Usuario(['id'=> $usuarioArray['id'], 'email' => $usuarioArray['email'], 'pass' => $usuarioArray['pass'], 'survey' => $usuarioArray['survey']]);
+            return $usuario;
 
-            } else {
-                return null;
-            }
-	    }
+        } else {
+            return null;
+        }
+    }
+
+	public function traerTabla($tabla)
+	{
+		$query = $this->conexion->prepare("SELECT * FROM ".$tabla." LIMIT 3");
+	    $query->bindValue(":tabla", $tabla);
+
+	    $query->execute();
+
+	    $tablaArray = $query->fetchAll(PDO::FETCH_ASSOC);
+
+	    return $tablaArray;
+	}
 }

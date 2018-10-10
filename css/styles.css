@@ -598,3 +598,43 @@
     padding: 25px 0px;
     clear: both;
   }
+
+  /*ESTILOS DE FORMULARIO DE CARGA*/
+
+  .titulo-carga {
+    padding-top:30px;
+  }
+
+  .formulario-carga{
+    margin:30px 0px;
+  }
+
+  .formulario-carga label {
+    font-size: 16px;
+    color: #333;
+  }
+
+  .formulario-carga input {
+    height: 55px;
+    width: 400px;
+    margin:20px 0px;
+    background: #fff;
+    border:none;
+    font-size: 16px;
+    padding:10px;
+     -webkit-box-shadow: 1px 1px 0px 0px rgba(0,0,0,0.15);
+    -moz-box-shadow: 1px 1px 0px 0px rgba(0,0,0,0.15);
+    box-shadow: 1px 1px 0px 0px rgba(0,0,0,0.15); 
+  }
+
+  .formulario-carga textarea {
+    margin:20px 0px;
+    border:none;
+    width: 400px;
+    -webkit-box-shadow: 1px 1px 0px 0px rgba(0,0,0,0.15);
+    -moz-box-shadow: 1px 1px 0px 0px rgba(0,0,0,0.15);
+    box-shadow: 1px 1px 0px 0px rgba(0,0,0,0.15);
+    padding:10px;
+    background: #fff;
+
+  }

@@ -3,11 +3,18 @@
 <?php
 
   // Si no está logueado, mando al usuario al login
-  if (!estaLogueado()) {
-    header('location: login.php');
-    exit;
-  }
+    if (!estaLogueado()) {
+        header('location: login.php');
+        exit;
+    }
 
+    if (!completoEncuesta($_SESSION['id']) & !$_POST) {
+        header('location: paso1.php');
+        exit;
+    } elseif (!$_POST) {
+        header('location: resultados.php');
+        exit;
+    }
 
  ?>
 

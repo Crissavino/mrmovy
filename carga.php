@@ -1,26 +1,18 @@
 <?php 
-require_once('funciones.php') 
-?>
-
-<?php 
     require_once('header.php');
     require ('classes/Validador.php');
     require ('classes/Auth.php'); 
-    require ('classes/Pelicula.php');
-?>
+    require_once ('classes/Pelicula.php');
 
-
-<?php
 
   $validador = new Validador();
   $auth = new Auth();
 
+  if (!estaLogueado()) {
+    header('location: index.php');
+    exit;
+  }
  
-
-  // if ($auth->estaLogueado()) {
-  //   header('location: resultados.php');
-  //   exit;
-  // }
   // inicializo las variables para persistirlas
     $title = '';
     $genre_id = '';
@@ -66,10 +58,10 @@ require_once('funciones.php')
                                     'netflix' => $netflix,
                                     'trailer' => $trailer
                                 ]);
-            $model->save();
-            //me devuelve bien la direccion pero no se como VERGA ponerla arriba!!!
             $urlCover = $model->urlPortada('cover');
-            header('location: perfil.php');
+            $model->setAttr('cover', $urlCover);
+            $model->save();
+            header('location: carga.php?success=true');
             exit;
         }
     }
@@ -83,8 +75,14 @@ require_once('funciones.php')
     </head>
     <body>
         <section class="contenedor">
-            <form class="" action="carga.php" method="post" enctype="multipart/form-data">
-                <label for="name">Cargar la portada de la pélicula</label><br>
+
+           <?php if (isset($_GET['success'])): ?>
+               <p>La película cargó correctamente</p>
+           <?php endif ?>
+
+            <h1 class="titulo-carga">Cargar una película</h1>
+            <form class="formulario-carga" action="carga.php" method="post" enctype="multipart/form-data">
+                <label for="name">Portada de la pélicula</label><br>
                 <input type="file" name="cover" value="<?= isset($_FILES['cover']) ? $_FILES['cover']['name'] : null ?>"><br>
                 <?= isset($erroresCarga['cover']) ? $erroresCarga['cover'] : '' ;?>
 
@@ -129,7 +127,7 @@ require_once('funciones.php')
                 <input type="url" name="trailer" value="<?= $trailer ?>"><br>
                 <?= isset($erroresCarga['trailer']) ? $erroresCarga['trailer'] : '' ?><br>
 
-                <button type="boton" name="button">Enviar Película</button>
+                <button type="boton" class="boton" name="button">Enviar Película</button>
             </form>
         </section>
 

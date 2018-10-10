@@ -1,6 +1,5 @@
 <?php
 
-require('MySQL_DB.php');
 
 class Model
 {
@@ -27,6 +26,11 @@ class Model
   private function insert()
   {
     $this->db->insert($this);
+  }
+
+  private function update()
+  {
+    $this->db->update($this);
   }
 
   public function getAttr($attr)

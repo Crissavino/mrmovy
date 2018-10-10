@@ -72,7 +72,6 @@ class JSON_DB
 		$usuarioJSON = json_encode($usuario);
 
 		file_put_contents('usuarios.json', $usuarioJSON . PHP_EOL, FILE_APPEND);
-
 	}
 
 	// FALTA FUNCION INSERTAR GENERAL

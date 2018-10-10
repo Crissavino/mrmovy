@@ -2,7 +2,6 @@
   require_once('header.php');
   require ('classes/Validador.php');
   require ('classes/Auth.php'); 
-  require ('classes/Usuario.php');
 
   $validador = new Validador();
   $auth = new Auth();
@@ -25,7 +24,7 @@
     $errores = $validador->Registro($_POST);
 
     if (empty($errores)) {
-      $model = new Usuario(['email' => $email, 'pass' => password_hash($_POST['pass'], PASSWORD_DEFAULT)]);
+      $model = new Usuario(['email' => $email, 'pass' => password_hash($_POST['pass'], PASSWORD_DEFAULT), 'survey' => '0']);
       $model->save();
 
       $auth->loguearUsuario($model->getAttr('email'));
