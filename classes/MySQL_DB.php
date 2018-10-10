@@ -48,8 +48,12 @@ class MySQL_DB extends DB
 		}
 	}
 
+<<<<<<< HEAD
     public function update($modelo)
     {
+=======
+    public function update($modelo){
+>>>>>>> d95ffdd69023205a94a997d39b4a1ebf0dfd3a8b
 
 
 	    	$id = $modelo->getAttr('id');	
@@ -73,6 +77,15 @@ class MySQL_DB extends DB
 			try {
 				$stmt = $this->conexion->prepare($sql);
 				$stmt->execute();
+<<<<<<< HEAD
+=======
+
+			} catch(Exception $e) {
+				$e->getMessage();
+			}
+	    }
+
+>>>>>>> d95ffdd69023205a94a997d39b4a1ebf0dfd3a8b
 
 			} catch(Exception $e) {
 				$e->getMessage();
@@ -107,6 +120,7 @@ class MySQL_DB extends DB
 
         if ($usuarioArray) {
 
+<<<<<<< HEAD
             $usuario = new Usuario(['id'=> $usuarioArray['id'], 'email' => $usuarioArray['email'], 'pass' => $usuarioArray['pass'], 'survey' => $usuarioArray['survey']]);
             return $usuario;
 
@@ -114,6 +128,15 @@ class MySQL_DB extends DB
             return null;
         }
     }
+=======
+                $usuario = new Usuario(['id'=> $usuarioArray['id'], 'email' => $usuarioArray['email'], 'pass' => $usuarioArray['pass'], 'survey' => $usuarioArray['survey']]);
+                return $usuario;
+
+            } else {
+                return null;
+            }
+	    }
+>>>>>>> d95ffdd69023205a94a997d39b4a1ebf0dfd3a8b
 
 	public function traerTabla($tabla)
 	{
