@@ -6,8 +6,8 @@
 # https://github.com/sequelpro/sequelpro
 #
 # Host: 127.0.0.1 (MySQL 5.6.38)
-# Base de datos: mrmovy_db
-# Tiempo de Generación: 2018-10-10 15:32:29 +0000
+# Base de datos: mrmovy_DB
+# Tiempo de Generación: 2018-10-10 18:08:51 +0000
 # ************************************************************
 
 
@@ -205,7 +205,8 @@ LOCK TABLES `movies` WRITE;
 INSERT INTO `movies` (`id`, `cover`, `title`, `genre_id`, `tag_id`, `year`, `length`, `resume`, `actor`, `producer`, `netflix`, `trailer`, `updated_at`, `created_at`)
 VALUES
 	(20,'images/portadas/The Shawshank Redemption.jpg','The Shawshank Redemption','Drama','Policial, carcel, disparos',1994,2,'Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.','Tim Robbins, Morgan Freeman, Bob Gunton ','Stephen King ','http://asdf.comh','http://sdfsfd.com','2018-10-10 12:27:04','2018-10-10 12:27:04'),
-	(21,'images/portadas/The Godfather.jpg','The Godfather','Drama','Mafia, disparos, dinero',1972,2,'The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son.',' Marlon Brando, Al Pacino, James Caan',' Francis Ford Coppola','http://asdf.com','http://sdfsfd.com','2018-10-10 12:28:10','2018-10-10 12:28:10');
+	(21,'images/portadas/The Godfather.jpg','The Godfather','Drama','Mafia, disparos, dinero',1972,2,'The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son.',' Marlon Brando, Al Pacino, James Caan',' Francis Ford Coppola','http://asdf.com','http://sdfsfd.com','2018-10-10 12:28:10','2018-10-10 12:28:10'),
+	(22,'images/portadas/The Dark Knight.jpg','The Dark Knight','Drama','Superhéroe, Fantasia, Comics',2008,192,'When the menace known as the Joker emerges from his mysterious past, he wreaks havoc and chaos on the people of Gotham. The Dark Knight must accept one of the greatest psychological and physical tests of his ability to fight injustice.','Christian Bale, Heath Ledger, Aaron Eckhart','Christopher Nolan','http://sdfsfd.com','http://sdfsfd.com','2018-10-10 14:04:38','2018-10-10 14:04:38');
 
 /*!40000 ALTER TABLE `movies` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -315,7 +316,7 @@ LOCK TABLES `users` WRITE;
 
 INSERT INTO `users` (`id`, `email`, `pass`, `updated_at`, `created_at`, `survey`)
 VALUES
-	(1,'prueba12@asd.com','$2y$10$Lgi/nu5.O9OkfXIwefQNSu3sRDoBHhsa6P8HqTSh2PRO6MZj6e5hq','2018-10-09 15:59:11','2018-10-09 15:59:11',NULL),
+	(1,'prueba12@asd.com','$2y$10$Lgi/nu5.O9OkfXIwefQNSu3sRDoBHhsa6P8HqTSh2PRO6MZj6e5hq','2018-10-09 15:59:11','2018-10-09 15:59:11',1),
 	(2,'prueba991@gmail.com','$2y$10$GngjkiQXxUKxgGizqAWSL.Z9xTK6/MIBJiCKEKi5nNpIdHZDXTdnm','2018-10-09 21:26:02','2018-10-09 21:26:02',1),
 	(3,'prueba9912@gmail.com','$2y$10$2GpuOt.YoXSSZv5gGhyXdujtq19hDQQfb4ihuB5mScwA3FJZ0WcvO','2018-10-09 21:26:35','2018-10-09 21:26:35',0),
 	(4,'prueba99122@gmail.com','$2y$10$QBBKMpA91UDAQLtuBXFVZ.zVgCa2bk0UgmGaVYVDCZqIfnBCssMEK','2018-10-09 21:27:14','2018-10-09 21:27:14',0),
