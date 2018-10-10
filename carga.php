@@ -6,7 +6,7 @@ require_once('funciones.php')
     require_once('header.php');
     require ('classes/Validador.php');
     require ('classes/Auth.php'); 
-    require ('classes/Pelicula.php');
+    require_once ('classes/Pelicula.php');
 ?>
 
 
@@ -16,11 +16,6 @@ require_once('funciones.php')
   $auth = new Auth();
 
  
-
-  // if ($auth->estaLogueado()) {
-  //   header('location: resultados.php');
-  //   exit;
-  // }
   // inicializo las variables para persistirlas
     $title = '';
     $genre_id = '';
@@ -66,9 +61,9 @@ require_once('funciones.php')
                                     'netflix' => $netflix,
                                     'trailer' => $trailer
                                 ]);
-            $model->save();
-            //me devuelve bien la direccion pero no se como VERGA ponerla arriba!!!
             $urlCover = $model->urlPortada('cover');
+            $model->setAttr('cover', $urlCover);
+            $model->save();
             header('location: perfil.php');
             exit;
         }

@@ -2,7 +2,6 @@
   require_once('header.php');
   require ('classes/Validador.php');
   require ('classes/Auth.php'); 
-  require ('classes/Usuario.php');
 
   $validador = new Validador();
   $auth = new Auth();

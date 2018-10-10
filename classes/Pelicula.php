@@ -1,6 +1,5 @@
 <?php 
 
-	require('classes/Model.php');
 
 	class Pelicula extends Model
 	{

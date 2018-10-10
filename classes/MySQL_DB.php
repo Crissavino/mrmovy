@@ -48,22 +48,36 @@ class MySQL_DB extends DB
 
 	}
 
-	public function update($modelo, $filtro, $iguala){
-	    //con el filtro le paso el dato para actualizar donde (WHERE) se cumpla ese filtro sea $iguala un valor que le paso por parametro
-	    $sql = "UPDATE ".$modelo->table." SET ";
+    public function update($modelo){
 
-	    foreach ($modelo->columns as $column => $value) {
-	        $sql .= "$column = $value, ";
+
+	    	$id = $modelo->getAttr('id');	
+	    	$sql = "UPDATE ".$modelo->table." SET ";
+	    	foreach ($modelo->columns as $colum) {
+	    		$sql .= $colum. " = ";
+	    		foreach ($modelo->datos as $key => $value) {
+	    			if ($key == $colum) {
+	    				$sql .= "'".$value."'". "";
+	    			}
+	    		}
+	    		$sql .= ", ";
+	    	}
+
+	    	$sql .= "WHERE id = $id;";
+
+
+	    	$sql = str_replace(', WHERE', ' WHERE', $sql);
+
+
+			try {
+				$stmt = $this->conexion->prepare($sql);
+				$stmt->execute();
+
+			} catch(Exception $e) {
+				$e->getMessage();
+			}
 	    }
-	    $sql .= ")";
 
-	    $sql = str_replace(', )', ' ', $sql);
-
-	    $sql .= " WHERE $filtro = $iguala;";
-
-	    return $sql;
-
-    }
 
     public function delete($data, $table){
         
@@ -93,7 +107,7 @@ class MySQL_DB extends DB
 
             if ($usuarioArray) {
 
-                $usuario = new Usuario(['email' => $usuarioArray['email'], 'pass' => $usuarioArray['pass']]);
+                $usuario = new Usuario(['id'=> $usuarioArray['id'], 'email' => $usuarioArray['email'], 'pass' => $usuarioArray['pass'], 'survey' => $usuarioArray['survey']]);
                 return $usuario;
 
             } else {

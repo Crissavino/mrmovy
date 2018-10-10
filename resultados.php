@@ -1,20 +1,19 @@
-<?php require_once('header.php') ?>
+<?php 
+    require_once('header.php');
 
-<?php
+    if (!estaLogueado()) {
+      header('location: login.php');
+      exit;
+    }
 
-  if (!estaLogueado()) {
-    header('location: login.php');
-    exit;
-  }
+    if ($_POST) {
+      cambiarEncuesta($_SESSION['id']);
+    }
 
-  if ($_POST) {
-    cambiarEncuesta($_SESSION['id']);
-  }
-
-  if (!completoEncuesta($_SESSION['id'])) {
-    header('location: paso1.php');
-    exit;
-  }
+    if (!completoEncuesta($_SESSION['id'])) {
+      header('location: paso1.php');
+      exit;
+    }
 
  ?>
 

@@ -1,17 +1,19 @@
-<?php require_once('header.php') ?>
+<?php require_once('header.php')?>
 
 <?php
+    require_once('classes/Usuario.php'); 
+
 
   // Si no está logueado, mando al usuario al login
-  if (!estaLogueado()) {
-    header('location: login.php');
-    exit;
-  }
+    if (!estaLogueado()) {
+        header('location: login.php');
+        exit;
+    }
 
-  if (completoEncuesta($_SESSION['id'])) {
-    header('location: resultados.php');
-    exit;
-  }
+    if (completoEncuesta($_SESSION['id'])) {
+        header('location: resultados.php');
+        exit;
+    }
 
 
  ?>
