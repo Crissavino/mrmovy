@@ -15,9 +15,10 @@
 		{
 		 $ext = strtolower(pathinfo($_FILES[$dato]['name'], PATHINFO_EXTENSION));
 		  $erroresCarga = [];
+		  $nombre = trim($_POST['title']);
 		  if ($ext == 'jpg' || $ext == 'jpeg' || $ext == 'png' ) {
 		    $desde = $_FILES[$dato]['tmp_name'];
-		    $hasta = dirname(__FILE__) . '/images' . '/portadas/' . $_POST['title'] .'.'.$ext;
+		    $hasta = 'images' . '/portadas/' . $nombre .'.'.$ext;
 		    move_uploaded_file($desde, $hasta);
 
 		    return $hasta;

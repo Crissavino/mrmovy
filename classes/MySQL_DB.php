@@ -114,4 +114,16 @@ class MySQL_DB extends DB
                 return null;
             }
 	    }
+
+	public function traerTabla($tabla)
+	{
+		$query = $this->conexion->prepare("SELECT * FROM ".$tabla." LIMIT 3");
+	    $query->bindValue(":tabla", $tabla);
+
+	    $query->execute();
+
+	    $tablaArray = $query->fetchAll(PDO::FETCH_ASSOC);
+
+	    return $tablaArray;
+	}
 }
